@@ -1,0 +1,9 @@
+background-opacity = 0.97
+background-blur = true
+theme = GitHub Dark
+# font-family = JetBrainsMono Nerd Font
+
+font-family = Iosevka Term Extended
+font-style = Regular
+font-size = 11
+async-backend = epoll

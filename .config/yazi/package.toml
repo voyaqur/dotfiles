@@ -1,0 +1,19 @@
+[[plugin.deps]]
+use = "gesellkammer/audio-preview"
+rev = "c95e4f6"
+hash = "94334f36009e7e1635de43c98c6502c5"
+
+[[plugin.deps]]
+use = "Reledia/glow"
+rev = "bd3eaa5"
+hash = "92b5c58159a51c567f82b618cee2b78"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "bb758e2"
+hash = "88e56a64b7ce7c4314427452343fef17"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "4770a34"
+hash = "7dfe41c9c3d9be76da8a844263d0bbed"

@@ -1,0 +1,92 @@
+/* Make the whole bar floating and centered */
+#waybar {
+    background: rgba(5,5,5,0.4)
+}
+* {
+    font-family: "Inter", "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: bold; /* Makes all text bold */
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.modules-left, .modules-center, .modules-right {
+
+}
+
+#window, #clock {
+    padding: 0 6px;
+}
+#clock {
+    transition: background 0.3s ease;
+}
+#workspaces {
+    background: rgba(30, 30, 30, 0); /* Dark semi-transparent */
+    margin: 4px;
+    transition: background 0.3s ease;
+}
+#workspaces button {
+    min-width: 8px;    /* You can adjust these if needed */
+    min-height: 8px;
+    padding: 0px 4px;   /* ADD THIS: Reduces space inside the button */
+    margin: 0px 4px;    /* ADJUST THIS: Reduces  */
+	border-radius: 10%;
+    background-color: rgba(55, 55, 55, 1);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0.6;
+}
+#workspaces button.active {
+    min-width: 22px; /* Expand horizontally */
+	border: 1px solid rgba(25,25 , 25, 0.15);
+    background-color: rgba(25, 25, 25, 0.8);
+    opacity: 1;
+}
+#submap {
+    padding: 0 4px;
+    margin: 4px;
+    opacity: 0;
+}
+
+#submap.resize, #submap.drag {
+    opacity: 1;
+}
+#pulseaudio {
+    border-radius: 25px;
+    padding: 0 4px;
+    margin: 4px;
+    color: #ffffff;
+}
+
+/* Slider trough (background of the bar) */
+#pulseaudio-slider trough {
+    min-height: 8px;
+    min-width: 75px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1); /* Matches your subtle theme */
+}
+
+/* The actual volume indicator */
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.8); /* Solid white to match your active workspace */
+}
+
+/* Remove the slider dot entirely */
+#pulseaudio-slider slider {
+    min-height: 0;
+    min-width: 0;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#window {
+    padding: 0 12px;
+    margin: 4px;
+    color: #ffffff;
+}
+
+/* Optional: If the icon is too small or large */
+#window image {
+    padding-right: 5px;
+}

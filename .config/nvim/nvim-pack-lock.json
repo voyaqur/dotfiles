@@ -1,0 +1,116 @@
+{
+  "plugins": {
+    "aerial.nvim": {
+      "rev": "28fe6e822ae344544c379d60fcb13c9519a1f08a",
+      "src": "https://github.com/stevearc/aerial.nvim"
+    },
+    "blink.cmp": {
+      "rev": "0f54bd78892f587db4dcf100a23eaddfc2a9df7d",
+      "src": "https://github.com/Saghen/blink.cmp"
+    },
+    "blink.indent": {
+      "rev": "8b69b9262891fe81fe728fe6a52fa2a84dd5d5e0",
+      "src": "https://github.com/Saghen/blink.indent"
+    },
+    "blink.lib": {
+      "rev": "5876dd95deeb70aadbe9f1c0b7117a135061cdac",
+      "src": "https://github.com/saghen/blink.lib"
+    },
+    "blink.pairs": {
+      "rev": "dd57684daf1297e854e46c85511e7875efb4de75",
+      "src": "https://github.com/Saghen/blink.pairs"
+    },
+    "conform.nvim": {
+      "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "crates.nvim": {
+      "rev": "694357861ec9ebf12475ddcdd04ea45a0923c32d",
+      "src": "https://github.com/Saecki/crates.nvim"
+    },
+    "cyberdream.nvim": {
+      "rev": "b9cc88378b776f33d3ea77164716f37c3f13ef72",
+      "src": "https://github.com/scottmckendry/cyberdream.nvim"
+    },
+    "dropbar.nvim": {
+      "rev": "808ba31cde89aec8833e9789f5e04557cd31c9e1",
+      "src": "https://github.com/Bekaboo/dropbar.nvim"
+    },
+    "fidget.nvim": {
+      "rev": "6f793b2bcd2d35e201c09520f698bb763220908a",
+      "src": "https://github.com/j-hui/fidget.nvim"
+    },
+    "friendly-snippets": {
+      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
+    "fzf-lua": {
+      "rev": "532d463f5c83595192fe740572d8fd6902b2217a",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "gitsigns.nvim": {
+      "rev": "31d6fb2d618bca1482b9f274751ead5f03461408",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "hardtime.nvim": {
+      "rev": "244753782b945def87472d8f4e9e6a9d4ec18689",
+      "src": "https://github.com/m4xshen/hardtime.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "221ce6b2d999187044529f49da6554a92f740a96",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
+    "matchparen.nvim": {
+      "rev": "75398158ea5a4cee4f0cbbeefdbf8fb1c3343e28",
+      "src": "https://github.com/monkoose/matchparen.nvim"
+    },
+    "nvim-dap": {
+      "rev": "9e848e09a697ee95302a3ef2dd43fd6eb709e570",
+      "src": "https://github.com/mfussenegger/nvim-dap"
+    },
+    "nvim-dap-view": {
+      "rev": "b8c8aa91f42055d7f69012587cde4f1d99f2a701",
+      "src": "https://github.com/igorlfs/nvim-dap-view"
+    },
+    "nvim-web-devicons": {
+      "rev": "0ca28b61a04fe7426cefbdd52c2647ef0e335b5f",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "oil.nvim": {
+      "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "onedarkpro.nvim": {
+      "rev": "f5fddfd5122fe00421e199151ae4fe8571a02898",
+      "src": "https://github.com/olimorris/onedarkpro.nvim"
+    },
+    "overseer.nvim": {
+      "rev": "a93d9f6d6defdac4bcd6d2c8ba988650e42e0a0e",
+      "src": "https://github.com/stevearc/overseer.nvim"
+    },
+    "rustaceanvim": {
+      "rev": "30041b520b50af82830c57939a104b79d01d4994",
+      "src": "https://github.com/mrcjkb/rustaceanvim"
+    },
+    "rustowl": {
+      "rev": "5c7df99bdfbe537c97623e34308cd49c6675c2c6",
+      "src": "https://github.com/cordx56/rustowl"
+    },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim"
+    },
+    "tree-sitter-manager.nvim": {
+      "rev": "09e3a321eea8100cacd2e759c3a6c9d350295fab",
+      "src": "https://github.com/romus204/tree-sitter-manager.nvim"
+    },
+    "vim-matchup": {
+      "rev": "055881643e1b37038a572c883de7b1969716db77",
+      "src": "https://github.com/andymass/vim-matchup"
+    },
+    "which-key.nvim": {
+      "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
+      "src": "https://github.com/folke/which-key.nvim"
+    }
+  }
+}

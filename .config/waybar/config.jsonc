@@ -1,0 +1,81 @@
+{
+    "height": 20,
+    "spacing": 3,
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+		"hyprland/submap",
+		"group/volume"
+    ],
+
+    // Module definitions
+    "hyprland/workspaces": {
+        "format": "{icon}",
+    },
+	"hyprland/submap": {
+	    "format": "󰹚  {}",
+	    "on-click": "hyprctl dispatch submap reset",
+	    "tooltip": false
+	},
+	"hyprland/window": {
+		"format": "{}",
+		"separate-outputs": true,
+    	"max-length": 30
+	},
+	"group/volume": {
+      "orientation": "horizontal",
+      "modules": [
+        "pulseaudio",
+        "pulseaudio/slider"
+      ]
+    },
+	"pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "ignored-sinks": ["Easy Effects Sink"],
+        "on-click": "pavucontrol",
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "clock": {
+		"format": "󰥔  {:%a, %d. %b %I:%M %p}",
+		"interval": 1,
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "format-disconnected": "Disconnected ⚠"
+    },
+    "tray": {
+        "spacing": 10
+    }
+}
