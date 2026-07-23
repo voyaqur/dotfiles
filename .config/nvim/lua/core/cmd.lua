@@ -10,3 +10,5 @@ cmd('Log', function(opts)
 	vim.notify(opts.args, vim.log.levels.WARN, { title = "User Log" })
 end, { nargs = '+', -- Declares that the command requires 1 or more arguments
 })
+
+

@@ -163,12 +163,37 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = "rust",
 	once = true,
 	callback = function(ev)
-		vim.keymap.set("n", "<leader>ro", function()
-			require("rustowl").toggle()
-		end, { desc = "Toggle RustOwl" })
-		vim.keymap.set("n", "<leader>re", function()
-			require("rustowl").enable()
-		end, { desc = "Enable RustOwl" })
+		require("rustowl").setup({
+			auto_enable = true,
+			idle_time = 300,
+			highlight_style = {
+				definitely_live = 'underline',
+				maybe_initialized = 'undercurl',
+			},
+			colors = {
+				lifetime = '#50fa7b', -- Dracula green
+				imm_borrow = '#8be9fd', -- Dracula cyan
+				mut_borrow = '#ff79c6', -- Dracula pink
+				move = '#f1fa8c',   -- Dracula yellow
+				call = '#ffb86c',   -- Dracula orange
+				outlive = '#ff5555',
+			},
+			client = {
+				on_attach = function(_, buffer)
+					vim.keymap.set('n', '<leader>ro', function()
+						require('rustowl').toggle(buffer)
+					end, { buffer = buffer, desc = 'Toggle RustOwl' })
+
+					vim.keymap.set('n', '<leader>re', function()
+						require('rustowl').enable(buffer)
+					end, { buffer = buffer, desc = 'Enable RustOwl' })
+
+					vim.keymap.set('n', '<leader>rd', function()
+						require('rustowl').disable(buffer)
+					end, { buffer = buffer, desc = 'Disable RustOwl' })
+				end
+			},
+		})
 		local has_wk, wk = pcall(require, "which-key")
 		if has_wk then
 			wk.add({

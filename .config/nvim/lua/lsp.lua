@@ -1,9 +1,13 @@
 local map = vim.keymap.set
+-- vim.opt.completeopt = { "menu", "noselect", "popup" }
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
 	callback = function(ev)
 		local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
-
+		if not client then
+			return
+		end
+		client.server_capabilities.semanticTokensProvider = nil
 		-- Buffer-local opts helper
 		local function opts(desc)
 			return { buffer = ev.buf, silent = true, desc = desc }
@@ -49,12 +53,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				vim.notify("Inlay Hints " .. (is_enabled and "Disabled" or "Enabled"))
 			end, opts("Toggle Inlay Hints"))
 		end
-
+		-- vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 		-- Native Completion
 		if client:supports_method("textDocument/completion") then
-			vim.lsp.completion.enable(true, client.id, ev.buf, {})
+			-- goodbye
+			vim.lsp.completion.enable(false, client.id, ev.buf, {})
+			-- vim.lsp.completion.enable(true, client.id, ev.buf, {
+			-- 	autotrigger = true,
+			-- 	convert = function(item)
+			-- 		return {
+			-- 			abbr = item.label:gsub("%b()", ""),
+			-- 		}
+			-- 	end,
+			--
+			-- 	vim.keymap.set("i", "<C-space>", vim.lsp.completion.get, { desc = "trigger autocompletion" })
+			-- })
 		end
-
 		-- Formatting: Defines buffer command :Fmt and binds to <leader>fm
 		if client:supports_method("textDocument/formatting") then
 			local format_func = function()
@@ -66,7 +80,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				end
 			end
 			vim.api.nvim_buf_create_user_command(ev.buf, "Fmt", format_func, { desc = "Format current buffer" })
-			map({ "n", "v" }, "<leader>fm", format_func, opts("Format buffer or selection"))
 		end
 	end,
 })

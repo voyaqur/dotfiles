@@ -1,9 +1,13 @@
-background-opacity = 0.97
+background-opacity = 1
 background-blur = true
-theme = GitHub Dark
+theme = Dark Pastel
+window-decoration = false
+resize-overlay = never
 # font-family = JetBrainsMono Nerd Font
-
-font-family = Iosevka Term Extended
+font-family = Iosevka Fixed Extended
+cursor-style = block
+cursor-style-blink = true
+shell-integration = zsh
 font-style = Regular
-font-size = 11
+font-size = 10
 async-backend = epoll

@@ -124,3 +124,13 @@ autocmd("BufWritePre", {
 		vim.opt.backupext = "-" .. os.date("%Y%m%d%H%M")
 	end,
 })
+
+
+autocmd("FileType", {
+	group = VRC,
+	desc = "Add timestamp to backup extension",
+	pattern = "rust",
+	callback = function()
+		require("debugger")
+	end,
+})

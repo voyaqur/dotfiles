@@ -1,8 +1,5 @@
--- yes- asasasaswwqwqwqwsas
 --
 require("core.base")
-
-vim.loader.enable()
 require("core.opts")
 require("theme")
 require("core.maps")

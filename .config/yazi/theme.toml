@@ -9,5 +9,4 @@ border_style  = { fg = "#45475a" } # Set to a muted gray/hex matching your syste
 # Clean up the bottom status bar colors
 background = "#1e1e2e"
 normal     = { fg = "#cdd6f4", bg = "#1e1e2e" }
-[flavor]
-dark = "catppuccin-mocha"
+
