@@ -2,7 +2,10 @@
 #  qutebrowser Configuration - Geist Dark Modernism (Safari Edition)
 # ==============================================================================
 
+terminal = 'ghostty'
+editor= 'nvim'
 # 1. CORE & QTWEBENGINE SETTINGS
+
 config.load_autoconfig(False)
 
 if not hasattr(c, 'qt'):
@@ -15,22 +18,18 @@ c.backend = 'webengine'
 c.qt.args.extend([
     # Process Model
     "--process-per-site",
-
     # Combined V8 JS Engine Limits
     "--js-flags=--max-old-space-size=512 --predictable-gc-schedule",
-
     # Resource Clamps & Low Memory Mode
     "--enable-low-end-device-mode",
     "--disable-background-timer-throttling",
     "--disable-renderer-backgrounding",
     "--disable-client-side-phishing-detection",
     "--disable-component-update",
-
     # Graphics Acceleration
     "--enable-gpu-rasterization",
     "--enable-zero-copy",
     "--ignore-gpu-blocklist",
-
     # Caching & Network Overhead
     "--disk-cache-size=52428800",
     "--media-cache-size=52428800",
@@ -38,7 +37,6 @@ c.qt.args.extend([
     "--no-pings",
     "--disable-quic",
     "--disable-breakpad",
-
     # Feature Stripping
     "--disable-speech-api",
     "--disable-speech-synthesis-api",
@@ -55,11 +53,9 @@ c.content.geolocation = False
 c.content.autoplay = False
 c.content.default_encoding = 'utf-8'
 c.content.pdfjs = False
-c.content.headers.user_agent = (
-    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 '
-    '(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36'
-)
-
+c.content.headers.user_agent = ( 
+'Mozilla/5.0 (Wayland; Linux x86_64) AppleWebKit/537.36 '
+' (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36' )
 c.scrolling.smooth = True
 c.auto_save.session = True
 c.confirm_quit = ['downloads']
@@ -69,7 +65,14 @@ c.downloads.position = 'bottom'
 
 c.url.start_pages = ["https://duckduckgo.com"]
 c.url.default_page = "https://duckduckgo.com"
-c.url.searchengines = {"DEFAULT": "https://duckduckgo.com/?q={}"}
+c.url.searchengines = {
+    "DEFAULT": "https://duckduckgo.com/?q={}",
+    "gh":      "https://github.com/search?q={}",
+    "aur":     "https://aur.archlinux.org/packages?K={}",
+    "yt":      "https://www.youtube.com/results?search_query={}",
+    "so":      "https://stackoverflow.com/search?q={}",
+    "w":       "https://en.wikipedia.org/wiki/Special:Search?search={}",
+}
 
 
 # ==============================================================================
@@ -82,10 +85,11 @@ c.tabs.show = 'multiple'
 c.tabs.show_switching_delay = 888
 
 # Compact Safari-style Tab Sizing & Separation
-c.tabs.padding = {'top': 3, 'bottom': 3, 'left': 10, 'right': 10}
+c.tabs.padding = {'top': 5, 'bottom': 5, 'left': 6, 'right': 6}
 c.tabs.indicator.width = 0
+c.tabs.width = 140
 c.tabs.favicons.show = 'always'
-c.tabs.favicons.scale = 0.8                      # Smaller icons to fit compact bar
+c.tabs.favicons.scale = 1.2
 c.tabs.title.format = '{current_title}'
 c.tabs.title.elide = 'right'
 
@@ -100,16 +104,27 @@ c.completion.shrink = True
 c.completion.scrollbar.width = 3
 c.completion.scrollbar.padding = 1
 
-
+# c.statusbar.url.format = '{protocol}://{host}{path}'
+c.statusbar.widgets = [
+    'keypress',    # Shows pending keypresses (e.g. 2gg)
+    'url',         # Current URL & title
+    'scroll_raw',      # Scroll percentage (e.g. 50%)
+    'scroll',      # Scroll percentage (e.g. 50%)
+    'history',     # Back/Forward status
+    'clock',      # Scroll percentage (e.g. 50%)
+    'tabs',    # Page loading bar
+    'search_match',    # Page loading bar
+    'progress',    # Page loading bar
+]
 # ==============================================================================
 #  3. TYPOGRAPHY
 # ==============================================================================
 c.fonts.default_family = [ 'Iosevka Term Extended', 'JetBrains Mono', 'Inter','monospace']
 c.fonts.default_size = '10pt'
-c.fonts.tabs.selected = 'bold 10pt default_family'
-c.fonts.tabs.unselected = '10pt default_family'
+c.fonts.tabs.selected = 'bold 9pt default_family'
+c.fonts.tabs.unselected = '9pt default_family'
 c.fonts.statusbar = '10pt default_family'
-c.fonts.completion.entry = '10pt default_family'
+c.fonts.completion.entry = '9pt default_family'
 c.fonts.completion.category = 'bold 9pt default_family'
 c.fonts.hints = 'bold 8pt default_family'
 
@@ -130,9 +145,9 @@ c.colors.tabs.selected.odd.fg = '#ffffff'
 
 # Inactive Tabs (Muted Flat Background)
 c.colors.tabs.even.bg = '#0a0a0a'                     # Pitch black base
-c.colors.tabs.even.fg = '#666666'                     # Geist Accent 5
+c.colors.tabs.even.fg = '#555555'                     # Geist Accent 5
 c.colors.tabs.odd.bg = '#0a0a0a'
-c.colors.tabs.odd.fg = '#666666'
+c.colors.tabs.odd.fg = '#555555'
 
 # Tab Borders (Safari-like subtle divider line)
 c.colors.tabs.pinned.selected.even.bg = '#171717'
@@ -156,9 +171,15 @@ c.colors.statusbar.insert.fg = '#00e676'              # Bright Geist Green
 # Passthrough Mode
 c.colors.statusbar.passthrough.bg = '#171717'         # Geist Accent 8
 c.colors.statusbar.passthrough.fg = '#7928ca'         # Geist Violet
+# Caret Mode
+c.colors.statusbar.caret.bg = '#171717'               # Geist Accent 8
+c.colors.statusbar.caret.fg = '#ffb300'               # Amber/Gold text
 
+# Caret Mode Selection (When highlighting text in caret mode)
+c.colors.statusbar.caret.selection.bg = '#171717'     # Geist Accent 8
+c.colors.statusbar.caret.selection.fg = '#ffb300'     # Amber/Gold text
 # URL Colors in Status Bar
-c.colors.statusbar.url.fg = '#666666'                 # Geist Accent 5
+c.colors.statusbar.url.fg = '#555555'                 # Geist Accent 5
 c.colors.statusbar.url.error.fg = '#ff1a1a'           # Geist Error Light
 c.colors.statusbar.url.hover.fg = '#3291ff'           # Geist Light Blue
 c.colors.statusbar.url.success.http.fg = '#888888'     # Geist Accent 4
@@ -169,7 +190,7 @@ c.colors.statusbar.url.warn.fg = '#f7b955'            # Geist Warning Light
 c.colors.statusbar.progress.bg = '#00e676'            # Matching Green Progress Bar
 
 # --- Completion Menu Colors ---
-c.colors.completion.category.fg = '#666666'
+c.colors.completion.category.fg = '#555555'
 c.colors.completion.category.bg = '#000000'
 c.colors.completion.category.border.top = '#000000'
 c.colors.completion.category.border.bottom = '#000000'
@@ -186,12 +207,11 @@ c.colors.completion.item.selected.border.bottom = '#1f1f1f'
 c.colors.completion.match.fg = '#3291ff'            # Geist Electric Blue
 c.colors.completion.scrollbar.fg = '#333333'
 c.colors.completion.scrollbar.bg = '#000000'
-
 # --- Hints ---
-c.hints.padding = {"top": 0, "bottom": 0, "left": 3, "right": 3}
+c.hints.padding = {"top": 2, "bottom": 2, "left": 3, "right": 3}
 c.hints.radius = 2
 c.hints.border = "1px solid #333333"
-c.colors.hints.bg = "#171717"
+c.colors.hints.bg = "#050505"
 c.colors.hints.fg = "#ffffff"
 c.colors.hints.match.fg = "#3291ff"
 
@@ -330,9 +350,11 @@ c.content.javascript.clipboard = "access"
 # Tab Visibility Toggles
 config.bind('tt', 'config-cycle tabs.show multiple never')
 config.bind('tT', 'config-cycle tabs.show always multiple')
-
+config.bind('xb', 'config-cycle statusbar.show always never')
+config.bind('xs', 'config-cycle -t tabs.position left right bottom top')
 # Stream Offloading to MPV
-config.bind('m', 'spawn --detach mpv {url}')
+config.bind('m', 'spawn mpv {url}')
+config.bind('yc', 'hint code userscript qute-code-hint')
 config.bind('M', 'hint links spawn --detach mpv {hint-url}')
 config.bind(';m', 'hint links spawn --detach mpv {hint-url}')
 
@@ -344,12 +366,6 @@ config.bind(',c', 'clear-keychain ;; clear-messages')      # Purge keychain & st
 config.bind(',k', 'spawn --userscript qute-keepassxc',mode='normal')
 config.bind(',ku', 'spawn --userscript qute-keepassxc --username-only')
 config.bind(',kp', 'spawn --userscript qute-keepassxc --password-only')
-config.bind(',kp', 'spawn --userscript qute-keepassxc --l')
-c.url.searchengines = {
-    "DEFAULT": "https://duckduckgo.com/?q={}",
-    "gh":      "https://github.com/search?q={}",
-    "aur":     "https://aur.archlinux.org/packages?K={}",
-    "yt":      "https://www.youtube.com/results?search_query={}",
-    "so":      "https://stackoverflow.com/search?q={}",
-    "w":       "https://en.wikipedia.org/wiki/Special:Search?search={}",
-}
+config.bind('gr', 'spawn --userscript readability-js')
+config.bind('sd', 'spawn --userscript doi')
+config.bind('gh', 'spawn {terminal} -e {editor} $QUTE_HTML')
