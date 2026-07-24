@@ -6,6 +6,11 @@ fi
 source-safe() {
 	if [ -f "$1" ]; then source "$1"; fi
 }
+
+# Only run fastfetch in interactive, top-level shells (avoids subshells/scripts)
+# if [[ $- == *i* ]] && [[ -z "$TMUX" ]] && [[ "$SHLVL" -eq 1 ]]; then
+	fastfetch --structure Title:Separator:OS:Host:Kernel:DateTime:Uptime:Packages:Shell:Processes:WM:LM:DE:Terminal:Editor:Memory:LocalIp:Locale:Break:Colors
+# fi
 source "$ZRCDIR/base.zsh"
 
 source "$ZRCDIR/option.zsh"

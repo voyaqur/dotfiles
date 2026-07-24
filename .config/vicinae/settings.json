@@ -14,8 +14,9 @@
    "consider_preedit": false,
    "pop_to_root_on_close": true,
    "activate_on_single_click": true,
-   "escape_key_behavior": "close_window",
+   "escape_key_behavior": "",
    "favicon_service": "google",
+   "keybinding": "vim",
    "font": {
       "rendering": "qt",
       "normal": {
@@ -25,25 +26,31 @@
    },
    "theme": {
       "dark": {
-         "name": "catppuccin-mocha",
+         "name": "zenwritten-dark",
          "icon_theme": "Adwaita"
       }
    },
    "launcher_window": {
-      "opacity": 0.6,
+      "opacity": 0.7,
       "client_side_decorations": {
          "enabled": true,
          "border_width": 1
       },
       "compact_mode": {
          "enabled": true
-      }
+      },
+      "material": "none"
    },
    "providers": {
+      "@system7/store.vicinae.keepassxc": {
+         "preferences": {
+            "database": "/home/voya/system.kdbx"
+         }
+      },
       "applications": {
          "enabled": true,
          "preferences": {
-            "defaultAction": "launch",
+            "defaultAction": "focus",
             "launchPrefix": "uwsm app -- ",
             "paths": [
                "/home/voya/.local/share/applications",

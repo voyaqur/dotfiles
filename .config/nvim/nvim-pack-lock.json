@@ -37,7 +37,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "eced685813841391087fd65f896fc6ce6339a809",
+      "rev": "bb8f7ef06fcbf6f4b31fde344bc16f4d33c8ec7f",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -89,7 +89,7 @@
       "src": "https://github.com/rktjmp/shipwright.nvim"
     },
     "theric.nvim": {
-      "rev": "ca3e411bee73b16bb1ef8e559ce8147f371b2582",
+      "rev": "854fccda09cd8c41538648821ba35f4c6b62254e",
       "src": "https://github.com/voyaqur/theric.nvim"
     },
     "tree-sitter-manager.nvim": {
