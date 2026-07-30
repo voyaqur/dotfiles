@@ -1,0 +1,33 @@
+vim.pack.add({
+	{ src = "https://github.com/stevearc/oil.nvim" },
+	{ src = "https://github.com/rafamadriz/friendly-snippets" },
+	{ src = "https://github.com/saghen/blink.lib" },
+	{ src = "https://github.com/Saghen/blink.cmp" },
+	-- { src = "https://github.com/Saghen/blink.pairs" },
+	-- { src = "https://github.com/jmbuhr/otter.nvim" },
+	-- { src = "https://github.com/Saghen/blink.indent" },
+	{ src = "https://github.com/ibhagwan/fzf-lua" },
+	{ src = "https://github.com/windwp/nvim-autopairs" },
+	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
+	{ src = "https://github.com/romus204/tree-sitter-manager.nvim" },
+	{ src = "https://github.com/m4xshen/hardtime.nvim" },
+	{ src = "https://github.com/j-hui/fidget.nvim" },
+	{ src = "https://github.com/folke/which-key.nvim" },
+	{ src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
+	{ src = "https://github.com/Bekaboo/dropbar.nvim" },
+	{ src = "https://github.com/MagicDuck/grug-far.nvim" },
+	{ src = "https://github.com/stevearc/aerial.nvim" },
+})
+
+-- Honorable mentions:
+-- { src = "https://github.com/ThePrimeagen/refactoring.nvim" },
+-- { src = "https://github.com/stevearc/overseer.nvim" },
+-- { src = "https://github.com/folke/trouble.nvim" },
+-- { src = https://github.com/nvim-neotest/neotest }
+-- { src = "https://github.com/mason-org/mason.nvim" },
+-- { src = "https://github.com/supermaven-inc/supermaven-nvim" },
+-- { src = "https://github.com/Huijiro/blink-cmp-supermaven" },
+-- { src = "https://github.com/zbirenbaum/copilot.lua" },
+-- { src = "https://github.com/giuxtaposition/blink-cmp-copilot" },
+-- { src = "https://github.com/folke/todo-comments.nvim" },

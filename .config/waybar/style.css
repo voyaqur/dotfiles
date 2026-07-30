@@ -1,0 +1,133 @@
+#waybar {
+    background: #001216;
+}
+
+* {
+    font-family: "Iosevka Term Extended Bold", "Inter", "JetBrainsMono Nerd Font", sans-serif;
+    font-weight: bold;
+    font-size: 9px;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0px;
+}
+
+.modules-left, .modules-center, .modules-right {
+}
+
+#window, #clock {
+    padding: 0 4px;
+    color: #fdf6e3;    /* Solarized Base03 */
+}
+
+#workspaces {
+    background: transparent;
+}
+
+#workspaces button {
+    min-width: 0;
+    min-height: 0;
+    padding: 0 5px;
+    margin: 0;
+    background-color: transparent;
+    color: #073642;       /* Solarized Base02 */
+    font-weight: normal;  /* Normal weight for inactive */
+}
+
+#workspaces button.active {
+    background-color: #073642; /* Solarized Base02 block highlight */
+    color: #fdf6e3;            /* Solarized Base3 */
+    font-weight: bold;         /* Bold weight for active */
+    opacity: 1;
+}
+
+#submap {
+    padding: 0 4px;
+    opacity: 0;
+    color: #b58900;    /* Solarized Yellow */
+}
+
+#submap.resize, #submap.drag {
+    opacity: 1;
+}
+
+/* Shared style for right-side modules */
+#custom-weather,
+#battery,
+#tray {
+    background-color: transparent;
+    padding: 0 3px;
+    color: #002b36;    /* Solarized Base03 */
+}
+
+#cpu {
+    background-color: transparent;
+    padding: 0 3px;
+    color: #d33682;    /* Solarized Magenta */
+}
+
+#memory {
+    background-color: transparent;
+    padding: 0 3px;
+    color: #6c71c4;    /* Solarized Violet */
+}
+
+#network {
+    background-color: transparent;
+    padding: 0 3px;
+    color: #859900;    /* Solarized Green */
+}
+
+#pulseaudio {
+    padding: 0 3px;
+    background-color: transparent;
+    color: #cb4b16;    /* Solarized Orange */
+}
+
+#battery.warning {
+    color: #b58900;    /* Solarized Yellow */
+}
+
+#battery.critical {
+    color: #dc322f;    /* Solarized Red */
+}
+
+#network.disconnected {
+    color: #dc322f;    /* Solarized Red */
+}
+
+#tray {
+    padding: 0 2px;
+}
+
+#tray > .passive {
+    opacity: 0.6;
+}
+
+#tray > .needs-attention {
+    background-color: rgba(220, 50, 47, 0.6);
+}
+
+#bluetooth {
+    color: #268bd2;
+    background-color: transparent;
+    padding: 0 6px;
+    font-weight: bold;
+}
+
+/* State when Bluetooth is disabled or off */
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #586e75; /* Muted base01 gray */
+}
+
+/* State when a device is connected */
+#bluetooth.connected {
+    color: #268bd2;
+    background-color: #00212b; /* Subtle background highlight on active connection */
+}
+
+/* Hover effect */
+#bluetooth:hover {
+    background-color: #073642;
+}

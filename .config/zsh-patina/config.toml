@@ -1,0 +1,6 @@
+[highlighting]
+theme = "file:~/dotfiles/.config/zsh-patina/Solarized_Osaka.toml"
+# Enable or disable dynamic highlighting. Can be `true` or `false` ...
+dynamic = true
+max_line_length = 20000
+timeout_ms = 500

@@ -1,0 +1,50 @@
+# keymap.toml — a thin, additive layer on top of yazi's built-in keymap.
+#
+# Yazi already ships an extensively vim-style default keymap: hjkl, gg/G,
+# v/V (visual select), y/x/p/P (yank/cut/paste), d/D (delete), / ? n N
+# (search), Ctrl-u/d/b/f (half/full page), :/; (shell) — even the text
+# input boxes have full modal editing (i/a/I/A, w/b/e word motion, 0/$/^,
+# d/c/y/p, u/Ctrl-r undo/redo). Press ~ or F1 inside yazi any time to see
+# the full live cheatsheet.
+#
+# Rather than re-declare all of that, this file uses prepend_keymap to add
+# the handful of real vim keys yazi doesn't bind by default. Prepended
+# entries are matched before the defaults, so they layer on top cleanly and
+# you'll automatically keep getting yazi's own keymap updates for free.
+#
+# Place at: ~/.config/yazi/keymap.toml (Linux/macOS)
+#           %AppData%\yazi\config\keymap.toml (Windows)
+#:schema https://yazi-rs.github.io/schemas/keymap.json
+
+[mgr]
+prepend_keymap = [
+	# Real vim jumplist keys, alongside the default H/L
+	{ on = "<C-o>", run = "back",    desc = "Jump back in history (vim jumplist)" },
+	{ on = "<C-i>", run = "forward", desc = "Jump forward in history (vim jumplist)" },
+
+	# Real vim tab-cycling keys, alongside the default [ / ]
+	{ on = [ "g", "t" ], run = "tab_switch 1 --relative",  desc = "Next tab (vim-style)" },
+	{ on = [ "g", "T" ], run = "tab_switch -1 --relative", desc = "Previous tab (vim-style)" },
+
+	# Ctrl-v as another entry point into visual/selection mode, for vim muscle memory
+	{ on = "<C-v>", run = "visual_mode", desc = "Enter visual mode (selection)" },
+]
+
+# ── Optional: real Vim marks ────────────────────────────────────────────────
+# Yazi has no native marks (m<letter> to save / '<letter> to jump), but the
+# community "bookmarks.yazi" plugin adds exactly that. To enable it:
+#   1. ya pkg add dedukun/bookmarks
+#   2. Uncomment the two lines below.
+# They're bound to M / ' rather than m / ' , because plain "m" is already
+# yazi's linemode leader in the defaults (m s, m p, m b, m m, m o, m n) —
+# binding plain "m" here would shadow that chord.
+#
+# [[mgr.prepend_keymap]]
+# on = "M"
+# run = "plugin bookmarks save"
+# desc = "Save current position as a mark"
+#
+# [[mgr.prepend_keymap]]
+# on = "'"
+# run = "plugin bookmarks jump"
+# desc = "Jump to a saved mark"

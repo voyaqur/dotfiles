@@ -1,0 +1,89 @@
+# ─────────────────────────────────────────────────────────
+# Solarized Osaka — zsh-patina theme
+# Palette sampled 1:1 from the provided swatch sheet (real
+# Solarized accent values, on a darker "Osaka" navy base).
+#
+# Terminal setup (outside this file):
+#   background         #00141A
+#   default foreground #9EACAD   <- matches punctuation below,
+#                                   so idle/plain text and
+#                                   structural chars agree
+#
+# Every hue family gets a job so nothing in the palette sits
+# unused, but the highest-frequency glyphs (pipes, redirects,
+# semicolons, brackets) stay hueless gray on purpose — that's
+# what actually causes "rainbow fatigue," not the color count:
+#   blue    -> commands / anything callable
+#   violet  -> control-flow keywords (if/for/while…)
+#   yellow  -> variables & expansions ($VAR, ${..})
+#   green   -> double-quoted strings (interpolated)
+#   cyan    -> single-quoted strings (literal, no expansion)
+#   magenta -> numeric constants
+#   orange  -> flags/options AND escape sequences (same
+#              "modifier" family — both alter meaning)
+#   red     -> reserved for real problems only: invalid
+#              commands / illegal syntax
+#   white   -> two rare, deliberate accents: quote-mark
+#              delimiters, and a function name being DEFINED
+#              (as opposed to blue = a command being CALLED)
+#   gray    -> comments + all general punctuation/operators
+# ─────────────────────────────────────────────────────────
+
+# comments
+"comment" = "#657B83"
+
+# strings — quote type carries meaning, so it gets a shade each
+"string" = "#859900"
+"string.quoted.double" = "#859900"
+"string.quoted.single" = "#2AA198"
+
+# numbers
+"constant.numeric" = "#D43682"
+
+# escapes (\n, \t, \\…) inside strings
+"constant.character.escape" = "#CB4A15"
+
+# variables & expansions
+"variable.other" = "#B58900"
+"variable.parameter" = "#B58900"
+"punctuation.definition.variable" = "#B58900"
+
+# callables: commands, aliases, builtins, functions being CALLED
+"variable.function" = "#278BD2"
+
+# a function NAME being DEFINED — bright, rare, on purpose
+"entity.name.function" = { foreground = "#FFFFFF", bold = true }
+
+# control-flow keywords
+"keyword" = "#6C71C4"
+
+# operators & general punctuation — intentionally hueless
+"keyword.operator" = "#9EACAD"
+"punctuation" = "#9EACAD"
+
+# quote-mark delimiters — bright neutral, not a hue, just a pop
+"punctuation.definition.string" = "#FFFFFF"
+
+# option/flags (-v, --long). Scope name varies by grammar version —
+# both keys are harmless to keep; drop whichever list-scopes
+# doesn't confirm.
+"support.function.flag" = "#CB4A15"
+"constant.other.option" = "#CB4A15"
+
+# syntax errors, if the grammar exposes this scope
+"invalid" = { foreground = "#DC322F", bold = true }
+"invalid.illegal" = { foreground = "#DC322F", bold = true }
+
+# ---- dynamic scopes (validity/existence checks) ----
+"dynamic.callable" = "#278BD2"
+"dynamic.callable.alias" = "#278BD2"
+"dynamic.callable.builtin" = "#278BD2"
+"dynamic.callable.command" = "#278BD2"
+"dynamic.callable.function" = "#278BD2"
+"dynamic.callable.missing" = { foreground = "#DC322F", bold = true }
+
+"dynamic.path" = { underline = true }
+"dynamic.path.file.complete" = { underline = true }
+"dynamic.path.file.partial" = { underline = true }
+"dynamic.path.directory.complete" = { underline = true }
+"dynamic.path.directory.partial" = { underline = true }

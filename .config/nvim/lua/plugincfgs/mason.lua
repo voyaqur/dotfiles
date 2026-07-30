@@ -1,0 +1,6 @@
+return {
+	firewall = {
+		enabled = true
+	},
+
+}

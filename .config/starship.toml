@@ -1,0 +1,304 @@
+# ~/.config/starship.toml
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+continuation_prompt = "[.](bright-black) "
+
+format = "$all$line_break$character"
+[character]
+success_symbol = '[>](bold #859900) [\$](#839496)'  # Cyan chevron, Base0 dollar sign
+error_symbol = '[>](bold #dc322f) [\$](#839496)'    # Red chevron (on error), Base0 dollar sign
+# Vi Normal Mode
+vimcmd_symbol = '[<](bold #2aa198) [\$](#b58900)'   # Cyan chevron, Yellow dollar sign
+
+# Vi Visual Mode
+vimcmd_visual_symbol = '[<](bold #d33682) [\$](#b58900)' # Pink/Magenta chevron, Yellow dollar sign
+
+# Vi Replace Modes
+vimcmd_replace_symbol = '[<](bold #dc322f) [\$](#b58900)'     # Red chevron, Yellow dollar sign
+vimcmd_replace_one_symbol = '[<](bold #dc322f) [\$](#b58900)' # Red chevron, Yellow dollar sign
+[fill]
+disabled=false
+symbol=' '
+[time]
+disabled = false
+time_format = '%r'
+format="at [ $time]($style) "
+[aws]
+symbol = " "
+[azure]
+disabled = false
+format = "on [$symbol($username)]($style) "
+symbol = "󰠅 "
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂃 "
+unknown_symbol = "󰂑 "
+empty_symbol = "󰂎 "
+[buf]
+symbol = " "
+[bun]
+symbol = " "
+[c]
+symbol = " "
+[cpp]
+disabled = false
+format = 'via [$name $version]($style)'
+symbol = " "
+[cmake]
+symbol = " "
+[cobol]
+symbol = " "
+[conda]
+symbol = " "
+[container]
+symbol = " "
+[crystal]
+symbol = " "
+[dart]
+symbol = " "
+[deno]
+symbol = " "
+[direnv]
+disabled = false
+symbol = " "
+[directory]
+read_only = " 󰌾"
+[docker_context]
+symbol = " "
+[dotnet]
+symbol = " "
+[elixir]
+symbol = " "
+[elm]
+symbol = " "
+[erlang]
+symbol = " "
+[fennel]
+symbol = " "
+[fortran]
+symbol = " "
+[fossil_branch]
+symbol = " "
+[gcloud]
+symbol = "󱇶 "
+[gleam]
+symbol = " "
+[git_branch]
+symbol = " "
+[git_commit]
+tag_symbol = '  '
+[golang]
+symbol = " "
+[gradle]
+symbol = " "
+[guix_shell]
+symbol = " "
+[haskell]
+symbol = " "
+[haxe]
+symbol = " "
+[helm]
+symbol = " "
+[hostname]
+ssh_only = true
+detect_env_vars = ['!TMUX', 'SSH_CONNECTION']
+ssh_symbol = "󰇧 "
+format = '[$ssh_symbol$hostname](bold dimmed green) '
+trim_at = '.'
+disabled = false
+[java]
+symbol = " "
+[julia]
+symbol = " "
+[kotlin]
+symbol = " "
+[kubernetes]
+symbol = "󱃾 "
+[lua]
+symbol = " "
+[maven]
+symbol = " "
+[memory_usage]
+threshold = -1
+style = 'bold dimmed green'
+symbol = "󰍛 "
+disabled=true
+[hg_state]
+disabled=false
+[hg_branch]
+symbol = " "
+[mise]
+disabled=false
+[meson]
+symbol = "󰔷 "
+[mojo]
+symbol = "󰈸 "
+[nats]
+symbol = " "
+[netns]
+symbol = "󰛳 "
+[nim]
+symbol = " "
+[nix_shell]
+symbol = " "
+[nodejs]
+symbol = " "
+[ocaml]
+symbol = " "
+[odin]
+symbol = "󰟢 "
+[opa]
+symbol = " "
+[openstack]
+symbol = " "
+[localip]
+ssh_only = true
+format = '@[$localipv4](bold yello) '
+disabled = false
+[os]
+format = "on [$symbol$name]($style)"
+style = "bold cyan"
+disabled = true
+[os.symbols]
+AIX = " "
+AlmaLinux = " "
+Alpaquita = " "
+Alpine = " "
+ALTLinux = " "
+Amazon = " "
+Android = " "
+AOSC = " "
+Arch = " "
+Artix = " "
+Bluefin = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Elementary = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = " "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = " "
+InstantOS = " "
+Ios = "󰀷 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = " "
+OpenCloudOS = " "
+openEuler = " "
+openSUSE = " "
+OracleLinux = "󰺡 "
+PikaOS = " "
+Pop = " "
+Raspbian = " "
+Redhat = "󱄛 "
+RedHatEnterprise = "󱄛 "
+Redox = "󰀘 "
+RockyLinux = " "
+Solus = " "
+SUSE = " "
+Ubuntu = " "
+Ultramarine = " "
+Unknown = " "
+Uos = " "
+Void = " "
+Windows = "󰍲 "
+Zorin = " "
+[package]
+symbol = "󰏗 "
+[perl]
+symbol = " "
+[php]
+symbol = " "
+[pijul_channel]
+symbol = " "
+[pixi]
+symbol = "󰏗 "
+[pulumi]
+symbol = " "
+[purescript]
+symbol = " "
+[python]
+symbol = " "
+[raku]
+symbol = "󱖊 "
+[red]
+symbol = "󱍼 "
+[rlang]
+symbol = "󰟔 "
+[ruby]
+symbol = " "
+[rust]
+symbol = "󱘗 "
+[scala]
+symbol = " "
+[shell]
+disabled = true
+fish_indicator = '󰈺 '
+powershell_indicator = ' '
+zsh_indicator = '󰬇 '
+format = ' [$indicator]($style)'
+bash_indicator = ' '
+unknown_indicator = 'mystery shell'
+style = 'bold gray'
+[shlvl]
+disabled = false
+format = '[$symbol]($style)'
+repeat = true
+repeat_offset = 1
+symbol = "󰹍 "
+[singularity]
+symbol = " "
+[solidity]
+symbol = " "
+[spack]
+symbol = " "
+[status]
+format = '[$symbol]($style) '
+map_symbol = true
+disabled = false
+style = 'fg:bright-white'
+symbol = "󰅖 "
+# success_symbol = "[󰄬 ](bold fg:green)" 
+not_found_symbol = "[ ](fg:blue)"
+not_executable_symbol = "[󰅖 ](fg:red)"
+sigint_symbol = "[󰈻 ](fg:white)"     # Interrupt (Magenta / Cancelled)
+signal_symbol = "[ ](fg:yellow)"      # Generic signal (Yellow / Alert)
+pipestatus = true
+pipestatus_format = '$pipestatus => [$symbol]($style)'
+pipestatus_segment_format = '[$status]($style)'
+success_style = 'bold fg:green'
+failure_style = 'bold fg:red'
+[sudo]
+disabled = false
+symbol = " "
+[swift]
+symbol = " "
+[terraform]
+symbol = " "
+[vlang]
+symbol = " "
+[typst]
+symbol = " "
+[vagrant]
+symbol = " "
+[xmake]
+symbol = " "
+[zig]
+symbol = " "
