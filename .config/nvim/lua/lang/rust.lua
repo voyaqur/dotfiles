@@ -145,27 +145,27 @@ vim.g.rustaceanvim = function()
 					},
 					numThreads = 8, -- tune to your core count; parallelizes indexing/checking
 					--
-					-- 	inlayHints = {
-					-- 		bindingModeHints = { enable = true },
-					-- 		chainingHints = { enable = true },
-					-- 		closingBraceHints = { enable = true, minLines = 25 },
-					-- 		closureReturnTypeHints = { enable = "always" },
-					-- 		lifetimeElisionHints = { enable = "skip_trivial" },
-					-- 		parameterHints = { enable = true },
-					-- 		typeHints = { enable = true },
-					-- 		expressionAdjustmentHints = { enable = "reborrow" }, -- shows implicit &/&mut/deref, genuinely IDE-tier
-					-- 		discriminantHints = { enable = "fieldless" },  -- shows enum discriminant values inline
-					-- 		closureCaptureHints = { enable = true },       -- shows what a closure captures and how (move/&/&mut) — big one for RustRover parity
-					-- 		closureStyle = "rust_analyzer",                -- readable closure type hints instead of raw impl Fn(...) soup
-					-- 		implicitDrops = { enable = true },             -- marks implicit drop points at end of scope
-					-- 		genericParameterHints = {
-					-- 			type = { enable = false },                   -- turbofish-style hints for elided generic type args; noisy, opt-in
-					-- 			lifetime = { enable = false },
-					-- 			const = { enable = true },                   -- hints for elided const generic args, usually worth it
-					-- 		},
-					-- 		maxLength = 25,                                -- truncates very long inlay hints instead of eating half the line
-					-- 		renderColons = true,
-					-- 	},
+					inlayHints = {
+						bindingModeHints = { enable = true },
+						chainingHints = { enable = true },
+						closingBraceHints = { enable = true, minLines = 25 },
+						closureReturnTypeHints = { enable = "always" },
+						lifetimeElisionHints = { enable = "skip_trivial" },
+						parameterHints = { enable = true },
+						typeHints = { enable = true },
+						expressionAdjustmentHints = { enable = "reborrow" }, -- shows implicit &/&mut/deref, genuinely IDE-tier
+						discriminantHints = { enable = "fieldless" },  -- shows enum discriminant values inline
+						closureCaptureHints = { enable = true },       -- shows what a closure captures and how (move/&/&mut) — big one for RustRover parity
+						closureStyle = "rust_analyzer",                -- readable closure type hints instead of raw impl Fn(...) soup
+						implicitDrops = { enable = true },             -- marks implicit drop points at end of scope
+						genericParameterHints = {
+							type = { enable = false },                   -- turbofish-style hints for elided generic type args; noisy, opt-in
+							lifetime = { enable = true },
+							const = { enable = true },                   -- hints for elided const generic args, usually worth it
+						},
+						maxLength = 25,                                -- truncates very long inlay hints instead of eating half the line
+						renderColons = true,
+					},
 					diagnostics = {
 						enable = true,
 						disabled = { "unresolved-proc-macro" },
@@ -232,9 +232,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-neotest/neotest" },
 })
 
--- DAP UI: auto open/close alongside debug sessions
 
--- Neotest: run/debug individual tests with results inline, no leaving the buffer
 local has_neotest, neotest = pcall(require, "neotest")
 if has_neotest then
 	neotest.setup({

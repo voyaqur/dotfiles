@@ -44,7 +44,7 @@ symbol = " "
 symbol = " "
 [cpp]
 disabled = false
-format = 'via [$name $version]($style)'
+format = 'via [$name $version]($style) '
 symbol = " "
 [cmake]
 symbol = " "
