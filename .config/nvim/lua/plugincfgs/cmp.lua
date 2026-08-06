@@ -13,34 +13,6 @@ return {
 	appearance = {
 		use_nvim_cmp_as_default = true,
 		nerd_font_variant = "mono",
-		kind_icons = {
-			-- Copilot = "",
-			Text = "󰉿",
-			Method = "󰊕",
-			Function = "󰊕",
-			Constructor = "󰒓",
-			Field = "󰜢",
-			Variable = "󰆦",
-			Property = "󰖷",
-			Class = "󱡠",
-			Interface = "󱡠",
-			Struct = "󱡠",
-			Module = "󰅩",
-			Unit = "󰪚",
-			Value = "󰦨",
-			Enum = "󰦨",
-			EnumMember = "󰦨",
-			Keyword = "󰻾",
-			Constant = "󰏿",
-			Snippet = "󱄽",
-			Color = "󰏘",
-			File = "󰈔",
-			Reference = "󰬲",
-			Folder = "󰉋",
-			Event = "󱐋",
-			Operator = "󰪚",
-			TypeParameter = "󰬛",
-		},
 	},
 	completion = {
 		trigger = {
@@ -49,7 +21,7 @@ return {
 			show_on_trigger_character = true,
 		},
 		keyword = { range = "full" },
-		list = { selection = { preselect = true, auto_insert = false } },
+		list = { selection = { preselect = false, auto_insert = false } },
 		menu = {
 			auto_show = true,
 			border = "none",
@@ -58,6 +30,7 @@ return {
 					{ "kind_icon" },
 					{ "label",    "label_description", gap = 1 },
 					{ "kind" },
+					-- { "source_name", "source_id",         gap = 1 },
 				},
 				treesitter = { "lsp" },
 			},
@@ -78,37 +51,21 @@ return {
 				},
 			},
 		},
-		ghost_text = { enabled = false, show_with_menu = true },
+		ghost_text = { enabled = true, show_with_menu = true },
 	},
 	sources = {
-		-- Default priority sequence (AI -> LSP -> Snippets -> Path -> Omni -> Buffer)
-		-- default = { "supermaven", "copilot", "lsp", "snippets", "path", "omni", "buffer" },
-		default = { "lsp", "snippets", "path", "buffer" },
+		default = { "lsp", "snippets", "path", "omni", "buffer" },
 		providers = {
-			-- Priority 1: AI Primary (Fastest)
-			-- supermaven = {
-			-- 	name = "supermaven",
-			-- 	module = "blink-cmp-supermaven",
-			-- 	score_offset = 100,
-			-- 	async = true,
-			-- },
-			-- -- Priority 2: AI Secondary (Deep logic)
-			-- copilot = {
-			-- 	name = "copilot",
-			-- 	module = "blink-cmp-copilot",
-			-- 	score_offset = 95,
-			-- 	async = true,
-			-- },
 			lsp = {
 				name = "LSP",
 				module = "blink.cmp.sources.lsp",
-				score_offset = 90,
+				score_offset = 100,
 				async = true,
 			},
 			snippets = {
 				name = "Snippets",
 				module = "blink.cmp.sources.snippets",
-				score_offset = 80,
+				score_offset = 90,
 				async = true,
 			},
 			path = {
@@ -119,7 +76,7 @@ return {
 						return vim.fn.getcwd()
 					end,
 				},
-				score_offset = 30,
+				score_offset = 50,
 			},
 			omni = {
 				name = "Omni",

@@ -36,6 +36,9 @@ map("n", "<leader>fm", "<cmd>FzfLua marks<CR>", { desc = "Find Marks", silent = 
 map("n", "<leader>fk", "<cmd>FzfLua keymaps<CR>", { desc = "Find Keymaps", silent = true })
 map("n", "<leader>fh", "<cmd>FzfLua help_tags<CR>", { desc = "Find Help Tags", silent = true })
 map("n", "<leader>fC", "<cmd>FzfLua command_history<CR>", { desc = "Command History", silent = true })
+map("n", "<leader>h", function()
+	require("hex").toggle()
+end, { desc = "Toggle hex", silent = true })
 
 -- map("n", "<leader>gs", "<cmd>FzfLua git_status<CR>", { desc = "Git Status", silent = true })
 -- map("n", "<leader>gc", "<cmd>FzfLua git_commits<CR>", { desc = "Git Commits", silent = true })

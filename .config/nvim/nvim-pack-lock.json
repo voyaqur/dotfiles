@@ -36,6 +36,10 @@
       "rev": "28440c741e927592877514fba3db21eb188caec8",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
+    "ghcid-error-file.nvim": {
+      "rev": "a6da8777166b580cff99ecf13950917f1b174657",
+      "src": "https://github.com/jecaro/ghcid-error-file.nvim"
+    },
     "gitsigns.nvim": {
       "rev": "31d6fb2d618bca1482b9f274751ead5f03461408",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -47,6 +51,14 @@
     "hardtime.nvim": {
       "rev": "244753782b945def87472d8f4e9e6a9d4ec18689",
       "src": "https://github.com/m4xshen/hardtime.nvim"
+    },
+    "haskell-tools.nvim": {
+      "rev": "b8e33745ef11432ced26942b5b0b38029e46d301",
+      "src": "https://github.com/MrcJkb/haskell-tools.nvim"
+    },
+    "hex.nvim": {
+      "rev": "b46e63356a69e8d6f046c38a9708d55d17f15038",
+      "src": "https://github.com/RaafatTurki/hex.nvim"
     },
     "iron.nvim": {
       "rev": "c7f8047d964fb155a701b7c860fa3d4143d713c5",
@@ -83,6 +95,10 @@
     "oil.nvim": {
       "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
       "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "overseer.nvim": {
+      "rev": "a93d9f6d6defdac4bcd6d2c8ba988650e42e0a0e",
+      "src": "https://github.com/stevearc/overseer.nvim"
     },
     "rustaceanvim": {
       "rev": "ae030cf5f8ab6aea56e03fa7e55b063111c0b833",

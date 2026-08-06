@@ -46,7 +46,7 @@ opt.writebackup = false
 -- Swap Engine Safeties
 opt.swapfile = false
 opt.directory = vim.fn.stdpath("state") .. "/swap/"
-vim.fn.mkdir(opt.directory:get()[1], "p")
+-- vim.fn.mkdir(opt.directory:get()[1], "p")
 opt.updatecount = 100
 
 -- External System Behaviors
@@ -123,9 +123,7 @@ opt.smoothscroll = true
 opt.scrolloff = 5 -- Prioritized 5 over 10 based on latest paste
 opt.sidescrolloff = 5
 
--- =============================================================================
 -- 4. Text Display, Indents & Line Rules
--- =============================================================================
 opt.number = true
 opt.relativenumber = true
 opt.wrap = true -- Flipped to true to prioritize your newest wrapping preference
@@ -136,10 +134,10 @@ opt.showcmd = true
 opt.cmdheight = 0
 
 -- Tab Expansion Rules
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
 opt.softtabstop = 4
-opt.expandtab = false
+opt.expandtab = true
 opt.shiftround = true
 
 -- Folding System Rules

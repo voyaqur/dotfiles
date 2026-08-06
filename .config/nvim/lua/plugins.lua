@@ -61,28 +61,13 @@ lazy.load("aerial", "LspAttach", nil, require("plugincfgs/aerial"), nil, functio
 	map("n", "<leader>ap", "<cmd>AerialPrev<cr>", { noremap = true, silent = true, desc = "Previous Aerial Symbol" })
 end)
 
--- 2. Overseer.nvim Configuration
--- --> I don't use this
--- lazy.load("overseer", "LspAttach", nil, require("plugincfgs/overseer"), nil, function()
--- 	map("n", "<leader>oo", "<cmd>OverseerToggle<cr>", { noremap = true, silent = true, desc = "Toggle Task List UI" })
--- 	map("n", "<leader>or", "<cmd>OverseerRun<cr>", { noremap = true, silent = true, desc = "Run Task from Template" })
--- 	map("n", "<leader>ot", "<cmd>OverseerTaskAction<cr>", { noremap = true, silent = true, desc = "Run Task Action" })
--- 	map("n", "<leader>os", "<cmd>OverseerShell<cr>", { noremap = true, silent = true, desc = "Run Shell Command as Task" })
--- end)
--- lazy.load("copilot", "InsertEnter", "*", {
--- 	suggestion = { enabled = false },
--- 	panel = { enabled = false }
--- })
---> I'm gonna fix u, maven
--- local ok, supamaven = pcall(require, "supermaven-nvim")
--- if ok then
--- 	supamaven.setup({
--- 		defaults = {
--- 			sorting_strategy = "ascending",
--- 			layout_config = { prompt_position = "top" },
--- 		},
--- 	})
--- end
+-- --> I don't use this, no more
+lazy.load("overseer", "LspAttach", nil, require("plugincfgs/overseer"), nil, function()
+	map("n", "<leader>oo", "<cmd>OverseerToggle<cr>", { noremap = true, silent = true, desc = "Toggle Task List UI" })
+	map("n", "<leader>or", "<cmd>OverseerRun<cr>", { noremap = true, silent = true, desc = "Run Task from Template" })
+	map("n", "<leader>ot", "<cmd>OverseerTaskAction<cr>", { noremap = true, silent = true, desc = "Run Task Action" })
+	map("n", "<leader>os", "<cmd>OverseerShell<cr>", { noremap = true, silent = true, desc = "Run Shell Command as Task" })
+end)
 lazy.load("nvim-autopairs", "InsertEnter", "*", { map_cr = true })
 lazy.load("blink.cmp", "InsertEnter", "*", require("plugincfgs.cmp"), function()
 	require("blink.cmp").build():pwait()

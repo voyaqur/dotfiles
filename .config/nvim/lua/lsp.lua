@@ -77,7 +77,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 })
-vim.lsp.enable({ "lua-ls", "clangd" })
+vim.lsp.enable({ "lua-ls", "clangd", "gopls" })
 vim.api.nvim_create_autocmd('BufReadPost', {
 	callback = function()
 		local iron = require("iron.core")

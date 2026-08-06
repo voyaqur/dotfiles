@@ -34,3 +34,5 @@ if [ -n "$ZSHRC_CI_TEST" ]; then
 fi
 eval "$(mise activate zsh)"
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+
+[ -f "/home/voya/.ghcup/env" ] && . "/home/voya/.ghcup/env" # ghcup-env
