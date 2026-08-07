@@ -24,7 +24,7 @@ opt.history = 10000
 opt.synmaxcol = 200 -- Prioritized 200 over 240 based on your latest config
 vim.opt.guicursor = ""
 vim.defer_fn(function()
-	vim.cmd.syntax("enable")
+    vim.cmd.syntax("enable")
 end, 50)
 
 -- ShaDa (Shared Data) configuration
@@ -96,23 +96,23 @@ opt.equalalways = false
 -- Clean Custom UI Borders & Character Masks
 opt.list = true
 opt.listchars = {
-	tab = "» ",
-	space = "·"
+    tab = "» ",
+    space = "·"
 }
 opt.fillchars = {
-	horiz = "━",
-	horizup = "┻",
-	horizdown = "┳",
-	vert = "┃",
-	vertleft = "┫",
-	vertright = "┣",
-	verthoriz = "╋",
-	foldopen = "",
-	foldclose = "",
-	fold = " ",
-	foldsep = " ",
-	diff = "╱",
-	eob = " ",
+    horiz = "━",
+    horizup = "┻",
+    horizdown = "┳",
+    vert = "┃",
+    vertleft = "┫",
+    vertright = "┣",
+    verthoriz = "╋",
+    foldopen = "",
+    foldclose = "",
+    fold = " ",
+    foldsep = " ",
+    diff = "╱",
+    eob = " ",
 }
 
 -- Native Advanced Dynamic Status Column Setup
@@ -141,8 +141,9 @@ opt.expandtab = true
 opt.shiftround = true
 
 -- Folding System Rules
-opt.foldmethod = "manual" -- Prioritized manual over indent based on newest paste
+opt.foldmethod = "expr" -- Prioritized manual over indent based on newest paste
 opt.foldlevel = 1
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldlevelstart = 99
 vim.w.foldcolumn = "0:" -- Scoped locally to window definitions
 
@@ -170,20 +171,20 @@ opt.wildmenu = true
 opt.wildmode = { "longest", "list", "full" }
 opt.wildoptions:append("pum")
 opt.wildignore:append({
-	"*/.git/*",
-	"*/node_modules/*",
-	"*/build/*",
-	"*/target/*",
-	"*.o",
-	"*.obj",
-	"*.exe",
-	"*.so",
-	"*.dll",
-	"*.pyc",
+    "*/.git/*",
+    "*/node_modules/*",
+    "*/build/*",
+    "*/target/*",
+    "*.o",
+    "*.obj",
+    "*.exe",
+    "*.so",
+    "*.dll",
+    "*.pyc",
 })
 
 if vim.fn.has("clipboard") == 1 then
-	opt.clipboard = { "unnamedplus", "unnamed" }
+    opt.clipboard = { "unnamedplus", "unnamed" }
 end
 
 -- Tag Path Extractions
@@ -206,6 +207,6 @@ opt.nrformats:append("unsigned")
 
 -- Global Diagnostic Architecture Config
 vim.diagnostic.config({
-	virtual_text = { source = true },
-	float = { source = true },
+    virtual_text = { source = true },
+    float = { source = true },
 })

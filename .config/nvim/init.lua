@@ -7,7 +7,8 @@ require("core.autocmd")
 require("installs")
 require("debugger")
 require("lang.rust")
-require("lang.haskell")
+
+-- require("lang.haskell")
 vim.api.nvim_create_autocmd({ "VimEnter", "UIEnter" }, {
     group = nil,
     once = true,

@@ -4,13 +4,15 @@ local map = vim.keymap.set
 map("n", "<leader>bn", ":bnext<CR>", { desc = "next buffer" })
 map("n", "<leader>bp", ":bprevious<CR>", { desc = "prev buffer" })
 map("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete Buffer" })
+map("n", "-", ":NvimTreeToggle<CR>", { desc = "Toggle tree" })
+--layout
 --layout
 map("n", "s\\", "<cmd>vsplit<CR>", { desc = "split vertically" })
 map("n", "s-", "<cmd>split<CR>", { desc = "split horizontally" })
 
 map("n", "<Esc>", "<Cmd>nohlsearch<CR><Esc>", { noremap = true, silent = true })
 map("n", "K", function()
-	vim.lsp.buf.hover()
+    vim.lsp.buf.hover()
 end, { noremap = true, silent = true, desc = "LSP hover" })
 
 -- better motion
@@ -37,7 +39,7 @@ map("n", "<leader>fk", "<cmd>FzfLua keymaps<CR>", { desc = "Find Keymaps", silen
 map("n", "<leader>fh", "<cmd>FzfLua help_tags<CR>", { desc = "Find Help Tags", silent = true })
 map("n", "<leader>fC", "<cmd>FzfLua command_history<CR>", { desc = "Command History", silent = true })
 map("n", "<leader>h", function()
-	require("hex").toggle()
+    require("hex").toggle()
 end, { desc = "Toggle hex", silent = true })
 
 -- map("n", "<leader>gs", "<cmd>FzfLua git_status<CR>", { desc = "Git Status", silent = true })
@@ -45,15 +47,15 @@ end, { desc = "Toggle hex", silent = true })
 -- map("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { desc = "Git Branches", silent = true })
 
 map("n", "<leader>fa", function()
-	require("aerial").fzf_lua_picker({ profile = "ivy" })
+    require("aerial").fzf_lua_picker({ profile = "ivy" })
 end, { noremap = true, silent = true, desc = "Fzf Aerial Outline" })
 
 map("n", "<leader>tp", function()
-	require("lua.plugincfgs.todo_comments").jump_next()
+    require("lua.plugincfgs.todo_comments").jump_next()
 end, { noremap = true, silent = true, desc = "Next TODO Comment" })
 
 map("n", "<leader>tn", function()
-	require("lua.plugincfgs.todo_comments").jump_prev()
+    require("lua.plugincfgs.todo_comments").jump_prev()
 end, { noremap = true, silent = true, desc = "Previous TODO Comment" })
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
@@ -62,11 +64,11 @@ map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 local directions = { h = "L", j = "D", k = "U", l = "R" }
 
 for key, tmux_dir in pairs(directions) do
-	vim.keymap.set("n", "<C-" .. key .. ">", function()
-		local before = vim.fn.winnr()
-		vim.cmd("wincmd " .. key)
-		if vim.fn.winnr() == before and vim.env.TMUX then
-			vim.fn.system("tmux select-pane -" .. tmux_dir)
-		end
-	end, { silent = true })
+    vim.keymap.set("n", "<C-" .. key .. ">", function()
+        local before = vim.fn.winnr()
+        vim.cmd("wincmd " .. key)
+        if vim.fn.winnr() == before and vim.env.TMUX then
+            vim.fn.system("tmux select-pane -" .. tmux_dir)
+        end
+    end, { silent = true })
 end

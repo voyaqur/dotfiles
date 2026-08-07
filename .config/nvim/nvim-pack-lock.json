@@ -1,16 +1,20 @@
 {
   "plugins": {
-    "aerial.nvim": {
-      "rev": "28fe6e822ae344544c379d60fcb13c9519a1f08a",
-      "src": "https://github.com/stevearc/aerial.nvim"
-    },
     "blink.cmp": {
-      "rev": "d26c6b0a4ea9188b9d10fdd5b180deba7675e3cd",
+      "rev": "cba53eff1948109ec0f47cbead4f07494d1e25c9",
       "src": "https://github.com/Saghen/blink.cmp"
     },
+    "blink.indent": {
+      "rev": "8b69b9262891fe81fe728fe6a52fa2a84dd5d5e0",
+      "src": "https://github.com/Saghen/blink.indent"
+    },
     "blink.lib": {
-      "rev": "2789206e10a0e4880f808c2aaf52bc57d876b481",
+      "rev": "8b04d0e0acc8565cfa4dd291a89a9212b7262633",
       "src": "https://github.com/saghen/blink.lib"
+    },
+    "blink.pairs": {
+      "rev": "dd57684daf1297e854e46c85511e7875efb4de75",
+      "src": "https://github.com/Saghen/blink.pairs"
     },
     "conform.nvim": {
       "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
@@ -24,41 +28,21 @@
       "rev": "808ba31cde89aec8833e9789f5e04557cd31c9e1",
       "src": "https://github.com/Bekaboo/dropbar.nvim"
     },
-    "fidget.nvim": {
-      "rev": "6f793b2bcd2d35e201c09520f698bb763220908a",
-      "src": "https://github.com/j-hui/fidget.nvim"
-    },
     "friendly-snippets": {
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "28440c741e927592877514fba3db21eb188caec8",
+      "rev": "8671012a7b2a1648595952c655039d51fb301c14",
       "src": "https://github.com/ibhagwan/fzf-lua"
-    },
-    "ghcid-error-file.nvim": {
-      "rev": "a6da8777166b580cff99ecf13950917f1b174657",
-      "src": "https://github.com/jecaro/ghcid-error-file.nvim"
     },
     "gitsigns.nvim": {
       "rev": "31d6fb2d618bca1482b9f274751ead5f03461408",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
-    "grug-far.nvim": {
-      "rev": "6e05398cf6cad05b3fb46569db96b1ccfcbbd402",
-      "src": "https://github.com/MagicDuck/grug-far.nvim"
-    },
     "hardtime.nvim": {
       "rev": "244753782b945def87472d8f4e9e6a9d4ec18689",
       "src": "https://github.com/m4xshen/hardtime.nvim"
-    },
-    "haskell-tools.nvim": {
-      "rev": "b8e33745ef11432ced26942b5b0b38029e46d301",
-      "src": "https://github.com/MrcJkb/haskell-tools.nvim"
-    },
-    "hex.nvim": {
-      "rev": "b46e63356a69e8d6f046c38a9708d55d17f15038",
-      "src": "https://github.com/RaafatTurki/hex.nvim"
     },
     "iron.nvim": {
       "rev": "c7f8047d964fb155a701b7c860fa3d4143d713c5",
@@ -85,27 +69,23 @@
       "src": "https://codeberg.org/Jorenar/nvim-dap-disasm"
     },
     "nvim-dap-view": {
-      "rev": "b8c8aa91f42055d7f69012587cde4f1d99f2a701",
+      "rev": "210b2c0e4acc08aad23fbd5a7989dd0169f716d0",
       "src": "https://github.com/igorlfs/nvim-dap-view"
+    },
+    "nvim-tree.lua": {
+      "rev": "b2aadda94b107480c48e548d6db51c6840b7b33c",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-web-devicons": {
       "rev": "2ae6958df7ced50baac5035cec0c15799eedfbf7",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
-    "oil.nvim": {
-      "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
-      "src": "https://github.com/stevearc/oil.nvim"
-    },
-    "overseer.nvim": {
-      "rev": "a93d9f6d6defdac4bcd6d2c8ba988650e42e0a0e",
-      "src": "https://github.com/stevearc/overseer.nvim"
-    },
     "rustaceanvim": {
-      "rev": "ae030cf5f8ab6aea56e03fa7e55b063111c0b833",
+      "rev": "a95e54462d069c7bdb2095d8cdbcef813f225288",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "rustowl": {
-      "rev": "f59c6030707be4bfe8468b7d57277989d63551dd",
+      "rev": "8fac3183bb443942cb03143dd1d61f5bf9098514",
       "src": "https://github.com/cordx56/rustowl"
     },
     "solarized-osaka.nvim": {
@@ -113,7 +93,7 @@
       "src": "https://github.com/craftzdog/solarized-osaka.nvim"
     },
     "tree-sitter-manager.nvim": {
-      "rev": "09e3a321eea8100cacd2e759c3a6c9d350295fab",
+      "rev": "9dc4ffc4fb010e7abb976a92360c2c5a7d324c15",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"
     },
     "which-key.nvim": {
