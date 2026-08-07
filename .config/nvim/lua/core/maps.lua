@@ -46,9 +46,9 @@ end, { desc = "Toggle hex", silent = true })
 -- map("n", "<leader>gc", "<cmd>FzfLua git_commits<CR>", { desc = "Git Commits", silent = true })
 -- map("n", "<leader>gb", "<cmd>FzfLua git_branches<CR>", { desc = "Git Branches", silent = true })
 
-map("n", "<leader>fa", function()
-    require("aerial").fzf_lua_picker({ profile = "ivy" })
-end, { noremap = true, silent = true, desc = "Fzf Aerial Outline" })
+-- map("n", "<leader>fa", function()
+--     require("aerial").fzf_lua_picker({ profile = "ivy" })
+-- end, { noremap = true, silent = true, desc = "Fzf Aerial Outline" })
 
 map("n", "<leader>tp", function()
     require("lua.plugincfgs.todo_comments").jump_next()
