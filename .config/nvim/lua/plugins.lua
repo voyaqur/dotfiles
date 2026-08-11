@@ -11,6 +11,12 @@ lazy.load("dropbar", "FileType", { "lua", "rust", "c", "cpp" }, nil, nil, functi
     vim.keymap.set('n', '];', dropbar_api.select_next_context, { desc = 'Select next context' })
 end)
 
+lazy.load("ufo", "InsertEnter", "*", require("plugincfgs.ufo"), nil, function()
+   vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+    vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+    vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
+    vim.keymap.set('n', 'zm', require('ufo').closeFoldsWith)
+end)
 -- lazy.load("todo-comments", { "BufReadPost", "BufNewFile" }, nil, require("plugincfgs/todo_comments"), nil, function()
 -- 	map("n", "<leader>ft", "<cmd>TodoFzfLua<cr>", { noremap = true, silent = true, desc = "Fzf Search TODOs" })
 -- 	map("n", "<leader>tq", "<cmd>TodoQuickFix<cr>", { noremap = true, silent = true, desc = "TODOs to QuickFix" })
@@ -27,10 +33,10 @@ end)
 -- })
 --
 --> no indent, i use nvim autopairs now
--- lazy.load("blink.indent", "InsertEnter", "*", require("plugincfgs/blink_indent"))
--- lazy.load("blink.pairs", "InsertEnter", "*", {}, function()
---     require("blink.pairs").build():pwait(1000000)
--- end)
+lazy.load("blink.indent", "InsertEnter", "*", require("plugincfgs/blink_indent"))
+lazy.load("blink.pairs", "InsertEnter", "*", {}, function()
+    require("blink.pairs").build():pwait(1000000)
+end)
 --
 
 -- lazy.load("fzf-lua", "CmdUndefined", { "Fzf", "FzfLua" }, {})
@@ -45,30 +51,30 @@ lazy.load("which-key", nil, nil, {}, function()
     vim.api.nvim_set_keymap("n", "[<CR>", "<Cmd>WhichKey [<CR>", { noremap = true })
     vim.api.nvim_set_keymap("n", "]<CR>", "<Cmd>WhichKey ]<CR>", { noremap = true })
     require("which-key").add({
-        -- { "<leader>a", group = "Aerial", icon = "󰛂 " },
-        -- { "<leader>o", group = "Overseer", icon = "󰐍 " },
+        { "<leader>a", group = "Aerial", icon = "󰛂 " },
+        { "<leader>o", group = "Overseer", icon = "󰐍 " },
         { "<leader>f", group = "FzfLua", icon = "󰍉 " },
     })
 end)
 lazy.load("conform", "BufWritePre", "*", require("plugincfgs/conform"), nil, function()
     vim.opt.formatexpr = "v:lua.require'conform'.formatexpr()"
 end)
--- lazy.load("aerial", "LspAttach", nil, require("plugincfgs/aerial"), nil, function()
---     map("n", "<leader>aa", "<cmd>AerialToggle!<cr>", { noremap = true, silent = true, desc = "Toggle Aerial Window" })
---     map("n", "<leader>at", "<cmd>AerialNavToggle<cr>",
---         { noremap = true, silent = true, desc = "Toggle Aerial Nav Popup" })
---     map("n", "<leader>an", "<cmd>AerialNext<cr>", { noremap = true, silent = true, desc = "Next Aerial Symbol" })
---     map("n", "<leader>ap", "<cmd>AerialPrev<cr>", { noremap = true, silent = true, desc = "Previous Aerial Symbol" })
--- end)
---
--- -- --> I don't use this, no more
--- lazy.load("overseer", "LspAttach", nil, require("plugincfgs/overseer"), nil, function()
---     map("n", "<leader>oo", "<cmd>OverseerToggle<cr>", { noremap = true, silent = true, desc = "Toggle Task List UI" })
---     map("n", "<leader>or", "<cmd>OverseerRun<cr>", { noremap = true, silent = true, desc = "Run Task from Template" })
---     map("n", "<leader>ot", "<cmd>OverseerTaskAction<cr>", { noremap = true, silent = true, desc = "Run Task Action" })
---     map("n", "<leader>os", "<cmd>OverseerShell<cr>",
---         { noremap = true, silent = true, desc = "Run Shell Command as Task" })
--- end)
+lazy.load("aerial", "LspAttach", nil, require("plugincfgs/aerial"), nil, function()
+    map("n", "<leader>aa", "<cmd>AerialToggle!<cr>", { noremap = true, silent = true, desc = "Toggle Aerial Window" })
+    map("n", "<leader>at", "<cmd>AerialNavToggle<cr>",
+        { noremap = true, silent = true, desc = "Toggle Aerial Nav Popup" })
+    map("n", "<leader>an", "<cmd>AerialNext<cr>", { noremap = true, silent = true, desc = "Next Aerial Symbol" })
+    map("n", "<leader>ap", "<cmd>AerialPrev<cr>", { noremap = true, silent = true, desc = "Previous Aerial Symbol" })
+end)
+
+-- --> I don't use this, no more
+lazy.load("overseer", "LspAttach", nil, require("plugincfgs/overseer"), nil, function()
+    map("n", "<leader>oo", "<cmd>OverseerToggle<cr>", { noremap = true, silent = true, desc = "Toggle Task List UI" })
+    map("n", "<leader>or", "<cmd>OverseerRun<cr>", { noremap = true, silent = true, desc = "Run Task from Template" })
+    map("n", "<leader>ot", "<cmd>OverseerTaskAction<cr>", { noremap = true, silent = true, desc = "Run Task Action" })
+    map("n", "<leader>os", "<cmd>OverseerShell<cr>",
+        { noremap = true, silent = true, desc = "Run Shell Command as Task" })
+end)
 lazy.load("nvim-autopairs", "InsertEnter", "*", { map_cr = true })
 lazy.load("blink.cmp", "InsertEnter", "*", require("plugincfgs.cmp"), function()
     require("blink.cmp").build():pwait()

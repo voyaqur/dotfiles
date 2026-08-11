@@ -7,6 +7,7 @@ require("core.autocmd")
 require("installs")
 require("debugger")
 require("lang.rust")
+require("lsp")
 
 -- require("lang.haskell")
 vim.api.nvim_create_autocmd({ "VimEnter", "UIEnter" }, {
@@ -15,11 +16,10 @@ vim.api.nvim_create_autocmd({ "VimEnter", "UIEnter" }, {
     callback = function()
         vim.schedule(function()
             require("plugins")
-            require("lsp")
             require("builtin")
         end)
-        vim.defer_fn(function()
-            require("core.cmd")
-        end, 50)
     end,
 })
+vim.defer_fn(function()
+    require("core.cmd")
+end, 50)

@@ -23,10 +23,10 @@
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-	output   = "eDP-1",
-	mode     = "1366x768@60",
-	position = "auto",
-	scale    = "auto",
+    output   = "eDP-1",
+    mode     = "1366x768@60",
+    position = "auto",
+    scale    = "auto",
 })
 
 
@@ -36,12 +36,12 @@ hl.monitor({
 
 -- Set programs that you use
 local programs = {
-	terminal = "ghostty",
-	fileManager = "yazi",
-	menu = "vicinae toggle",
-	notification = "dunst",
-	shell = "quickshell",
-	browser = "zen-browser"
+    terminal = "ghostty",
+    fileManager = "yazi",
+    menu = "vicinae toggle",
+    notification = "dunst",
+    shell = "quickshell",
+    browser = "zen-browser"
 }
 
 -------------------
@@ -52,15 +52,14 @@ local programs = {
 
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
---
 local start = "uwsm app -- "
 hl.on("hyprland.start", function()
-	-- hl.exec_cmd(programs.terminal)
-	hl.exec_cmd(start .. programs.notification)
-	-- hl.exec_cmd("uwsm app -- " .. programs.shell)
-	hl.exec_cmd(start .. "keepassxc", { workspace = "special:keepassxc" })
-	--j  hl.exec_cmd("nm-applet")
-	-- hl.exec_cmd("waybar & hyprpaper & firefox")
+    -- hl.exec_cmd(programs.terminal)
+    hl.exec_cmd(start .. programs.notification)
+    -- hl.exec_cmd("uwsm app -- " .. programs.shell)
+    hl.exec_cmd(start .. "keepassxc", { workspace = "special:keepassxc" })
+    -- hl.exec_cmd("fcitx5 -d")
+    -- hl.exec_cmd("nm-applet")
 end)
 
 
@@ -107,34 +106,34 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 
 hl.config({
-	input = {
-		kb_layout    = "us",
-		kb_variant   = "",
-		kb_model     = "",
-		kb_options   = "",
-		kb_rules     = "",
+    input = {
+        kb_layout    = "us",
+        kb_variant   = "",
+        kb_model     = "",
+        kb_options   = "",
+        kb_rules     = "",
 
-		follow_mouse = 1,
+        follow_mouse = 1,
 
-		sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
 
-		touchpad     = {
-			natural_scroll = false,
-		},
-	},
+        touchpad     = {
+            natural_scroll = false,
+        },
+    },
 })
 
 hl.gesture({
-	fingers = 3,
-	direction = "horizontal",
-	action = "workspace"
+    fingers = 3,
+    direction = "horizontal",
+    action = "workspace"
 })
 
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 hl.device({
-	name        = "epic-mouse-v1",
-	sensitivity = -0.5,
+    name        = "epic-mouse-v1",
+    sensitivity = -0.5,
 })
 
 require("conf.look").setup()

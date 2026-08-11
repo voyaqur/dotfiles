@@ -109,6 +109,7 @@ opt.fillchars = {
     verthoriz = "╋",
     foldopen = "",
     foldclose = "",
+    foldinner = " ",
     fold = " ",
     foldsep = " ",
     diff = "╱",
@@ -143,8 +144,11 @@ opt.shiftround = true
 -- Folding System Rules
 opt.foldmethod = "expr" -- Prioritized manual over indent based on newest paste
 opt.foldlevel = 1
-opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldenable = true
+opt.foldcolumn = '1'
+-- opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldlevelstart = 99
+opt.foldlevel = 99
 vim.w.foldcolumn = "0:" -- Scoped locally to window definitions
 
 -- Inter-line joins and editing options

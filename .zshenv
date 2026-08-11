@@ -111,3 +111,7 @@ unset GIT_ASKPASS
 unset SSH_ASKPASS
 
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
+export GTK_IM_MODULE=wayland
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx

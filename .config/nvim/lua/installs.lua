@@ -9,20 +9,22 @@ vim.pack.add({
     { src = "https://github.com/m4xshen/hardtime.nvim" },
     { src = "https://github.com/folke/which-key.nvim" },
     { src = "https://github.com/stevearc/conform.nvim" },
+    { src = "https://github.com/kevinhwang91/promise-async" },
+    { src = "https://github.com/kevinhwang91/nvim-ufo" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
     { src = "https://github.com/Bekaboo/dropbar.nvim" },
     { src = "https://github.com/nvim-neotest/neotest" },
     { src = "https://github.com/nvim-tree/nvim-tree.lua" },
+    { src = "https://github.com/stevearc/overseer.nvim" },
+    { src = "https://github.com/Saghen/blink.pairs" },
+    { src = "https://github.com/Saghen/blink.indent" },
+    { src = "https://github.com/stevearc/aerial.nvim" },
 })
 
 
-
 -- Honorable mentions (removed):
--- { src = "https://github.com/stevearc/overseer.nvim" },
--- { src = "https://github.com/Saghen/blink.pairs" },
--- { src = "https://github.com/Saghen/blink.indent" },
--- { src = "https://github.com/stevearc/aerial.nvim" },
 -- { src = "https://github.com/RaafatTurki/hex.nvim" },
+-- { src = "https://github.com/nvim-mini/mini.nvim" },
 -- { src = "https://github.com/MagicDuck/grug-far.nvim" },
 -- { src = 'https://github.com/FylerOrg/fyler.nvim' }
 -- { src = "https://github.com/ThePrimeagen/refactoring.nvim" },
@@ -36,8 +38,8 @@ vim.pack.add({
 -- { src = "https://github.com/Huijiro/blink-cmp-supermaven" },
 -- { src = "https://github.com/stevearc/oil.nvim" },
 -- { src = "https://github.com/zbirenbaum/copilot.lua" },
--- -> no thanks
 -- { src = "https://github.com/jmbuhr/otter.nvim" },
+--
 require("nvim-tree").setup({
     hijack_netrw = true,
     disable_netrw = true,
