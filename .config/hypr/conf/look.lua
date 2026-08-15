@@ -2,7 +2,7 @@ local config = {}
 function config.setup()
     hl.config({
         general = {
-            gaps_in          = 2,
+            gaps_in          = 1,
             gaps_out         = 2,
             border_size      = 1,
             col              = {
@@ -37,7 +37,6 @@ function config.setup()
                 passes   = 2,
                 noise    = 0.01417823,
                 vibrancy = 0.1696,
-
             },
         },
 
@@ -51,7 +50,7 @@ function config.setup()
         scrolling = {
             fullscreen_on_one_column = true,
             focus_fit_method = 0,
-            column_width = 1
+            column_width = 0.95
         },
         -- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
         master = {
@@ -61,7 +60,7 @@ function config.setup()
             enabled = true,
         },
         cursor = {
-            inactive_timeout = 0,
+            inactive_timeout = 1,
             hide_on_key_press = true
         },
         misc = {

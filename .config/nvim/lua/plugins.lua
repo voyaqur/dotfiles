@@ -12,16 +12,17 @@ lazy.load("dropbar", "FileType", { "lua", "rust", "c", "cpp" }, nil, nil, functi
 end)
 
 lazy.load("ufo", "InsertEnter", "*", require("plugincfgs.ufo"), nil, function()
-   vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+    vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
     vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
     vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
     vim.keymap.set('n', 'zm', require('ufo').closeFoldsWith)
 end)
--- lazy.load("todo-comments", { "BufReadPost", "BufNewFile" }, nil, require("plugincfgs/todo_comments"), nil, function()
--- 	map("n", "<leader>ft", "<cmd>TodoFzfLua<cr>", { noremap = true, silent = true, desc = "Fzf Search TODOs" })
--- 	map("n", "<leader>tq", "<cmd>TodoQuickFix<cr>", { noremap = true, silent = true, desc = "TODOs to QuickFix" })
--- 	map("n", "<leader>tt", "<cmd>TodoLocList<cr>", { noremap = true, silent = true, desc = "TODOs to Location List" })
--- end)
+
+lazy.load("todo-comments", nil, "*", require("plugincfgs/todo_comments"), nil, function()
+    map("n", "<leader>ft", "<cmd>TodoFzfLua<cr>", { noremap = true, silent = true, desc = "Fzf Search TODOs" })
+    map("n", "<leader>tq", "<cmd>TodoQuickFix<cr>", { noremap = true, silent = true, desc = "TODOs to QuickFix" })
+    map("n", "<leader>tt", "<cmd>TodoLocList<cr>", { noremap = true, silent = true, desc = "TODOs to Location List" })
+end)
 
 -- lazy.load("mason", nil, nil, require("plugincfgs/mason"))
 -- vim.api.nvim_create_autocmd({ "FileType" }, {

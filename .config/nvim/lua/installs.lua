@@ -19,6 +19,7 @@ vim.pack.add({
     { src = "https://github.com/Saghen/blink.pairs" },
     { src = "https://github.com/Saghen/blink.indent" },
     { src = "https://github.com/stevearc/aerial.nvim" },
+    { src = "https://github.com/folke/todo-comments.nvim" },
 })
 
 
@@ -32,7 +33,6 @@ vim.pack.add({
 -- { src = "https://github.com/j-hui/fidget.nvim" },
 -- { src = "https://github.com/mason-org/mason.nvim" },
 -- { src = "https://github.com/supermaven-inc/supermaven-nvim" },
--- { src = "https://github.com/folke/todo-comments.nvim" },
 -- { src = "https://github.com/chrisgrieser/nvim-lsp-endhints" },
 -- { src = "https://github.com/giuxtaposition/blink-cmp-copilot" },
 -- { src = "https://github.com/Huijiro/blink-cmp-supermaven" },

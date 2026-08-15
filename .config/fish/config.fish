@@ -1,11 +1,11 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 	set -gx EDITOR nvim
-	if uwsm check may-start
-	    exec uwsm start hyprland.desktop
-	end
-	abbr -a hlua nvim ~/.config/hypr/hyprland.lua
-	fish_vi_key_bindings
+	# if uwsm check may-start
+	#     exec uwsm start hyprland.desktop
+	# end
+	# abbr -a hlua nvim ~/.config/hypr/hyprland.lua
+	# fish_vi_key_bindings
 end
 set -U fish_greeting
 # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -21,5 +21,3 @@ end
 starship init fish | source
 enable_transience
 # Make sure you initialize and enable transience at the end of the file
-starship init fish | source
-enable_transience

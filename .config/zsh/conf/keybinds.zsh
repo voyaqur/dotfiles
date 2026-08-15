@@ -12,3 +12,9 @@ zle -N cd-up
 autoload -U edit-command-line
 zle -N edit-command-line
 zle -N show_buffer_stack
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
