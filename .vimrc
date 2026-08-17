@@ -1,3 +1,4 @@
+" test
 let s:plug_path = expand(has('win32') ? '~/vimfiles/autoload/plug.vim' : '~/.vim/autoload/plug.vim')
 
 if empty(glob(s:plug_path))
