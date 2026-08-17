@@ -1,5 +1,5 @@
-background-opacity = 0.9
-background-blur = true
+background-opacity = 1
+background-blur = false
 theme = Solarized Dark
 background = #031219
 window-decoration = false
@@ -15,7 +15,6 @@ font-size = 11
 adjust-cell-height = 0%
 gtk-single-instance = true
 mouse-reporting = true
-scrollback-limit = 0
 scrollbar = never
 async-backend = epoll
 quit-after-last-window-closed = true

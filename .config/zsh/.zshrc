@@ -37,3 +37,6 @@ fi
 #   exec fish
 # fi
 export PATH=$PATH:/home/voya/.spicetify
+
+### Added by Zinit's installer
+### End of Zinit's installer chunk

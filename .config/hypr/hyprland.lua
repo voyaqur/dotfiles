@@ -40,8 +40,8 @@ local programs = {
     fileManager = "yazi",
     menu = "vicinae toggle",
     notification = "dunst",
-    shell = "quickshell",
-    browser = "zen-browser"
+    -- shell = "quickshell",
+    browser = "firefox"
 }
 
 -------------------

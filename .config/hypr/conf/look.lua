@@ -2,15 +2,15 @@ local config = {}
 function config.setup()
     hl.config({
         general = {
-            gaps_in          = 1,
-            gaps_out         = 2,
+            gaps_in          = 0,
+            gaps_out         = 0,
             border_size      = 1,
             col              = {
                 active_border = { colors = { "rgba(806100ff)", "rgba(913610ff)" }, angle = 45 },
                 inactive_border = "rgba(073642aa)",
             },
             -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
-            resize_on_border = false,
+            resize_on_border = true,
             -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
             allow_tearing    = false,
             layout           = "dwindle",
@@ -32,7 +32,7 @@ function config.setup()
             },
 
             blur             = {
-                enabled  = true,
+                enabled  = false,
                 size     = 3,
                 passes   = 2,
                 noise    = 0.01417823,
@@ -42,9 +42,9 @@ function config.setup()
 
         -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
         dwindle = {
-            smart_split = true,
-            smart_resizing = true,
-            preserve_split = true
+            smart_split = false,
+            smart_resizing = false,
+            preserve_split = false
         },
         -- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
         scrolling = {
@@ -57,7 +57,7 @@ function config.setup()
             new_status = "master",
         },
         animations = {
-            enabled = true,
+            enabled = false,
         },
         cursor = {
             inactive_timeout = 1,

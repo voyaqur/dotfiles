@@ -5,7 +5,7 @@
       "src": "https://github.com/stevearc/aerial.nvim"
     },
     "blink.cmp": {
-      "rev": "8ca29c2eb34f5ce4770bffc0d62e6f636a4e8526",
+      "rev": "e116ff9c5c1c2ed6bcdb2e0a6e547099876a8116",
       "src": "https://github.com/Saghen/blink.cmp"
     },
     "blink.indent": {
@@ -21,7 +21,7 @@
       "src": "https://github.com/Saghen/blink.pairs"
     },
     "conform.nvim": {
-      "rev": "619363c30309d29ffa631e67c8183f2a72caa373",
+      "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "crates.nvim": {
@@ -37,11 +37,11 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "8671012a7b2a1648595952c655039d51fb301c14",
+      "rev": "05e44d38de0a79c11fba5f7bf8138791b1dbdd1e",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
-      "rev": "31d6fb2d618bca1482b9f274751ead5f03461408",
+      "rev": "5be654f2232c10ddcad19c1607a67b6b4b78fc29",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "hardtime.nvim": {
@@ -97,7 +97,7 @@
       "src": "https://github.com/kevinhwang91/promise-async"
     },
     "rustaceanvim": {
-      "rev": "d3e1141a845163c07bdc117b90a38741a1e4fc85",
+      "rev": "f659765f93e207b8c44ee4a90eb88bd6e93bf05f",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "rustowl": {
@@ -105,7 +105,7 @@
       "src": "https://github.com/cordx56/rustowl"
     },
     "solarized-osaka.nvim": {
-      "rev": "f675d9a5c58f3b0d6158d665a623f81a62e7bdaf",
+      "rev": "d9522dd158e5659adc7dca8a85b1eb64ae5f533f",
       "src": "https://github.com/craftzdog/solarized-osaka.nvim"
     },
     "todo-comments.nvim": {

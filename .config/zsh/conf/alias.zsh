@@ -1,2 +1,3 @@
 # alias -g vim="nvim"
-alias -g make="make -f ~/workflows/cp/Makefile"
+alias -g make="make -f ~/cp/Makefile"
+alias -g cpgen="cp ~/cp/templates/main.cpp "
