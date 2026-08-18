@@ -17,6 +17,7 @@ set completeopt=menuone,noinsert,noselect
 set clipboard=unnamed,unnamedplus
 set shortmess+=c
 
+colorscheme default
 let mapleader = " "
 
 if isdirectory(expand('~/cp'))
@@ -131,10 +132,6 @@ autocmd User CocCmdlineEnter grep -q
 autocmd User CocCmdlineLeave grep -q
 
 
-highlight CocErrorHighlight   gui=undercurl guisp=#ff5555
-highlight CocWarningHighlight gui=undercurl guisp=#ffb86c
-highlight CocInfoHighlight    gui=undercurl guisp=#8be9fd
-highlight CocHintHighlight   gui=undercurl guisp=#50fa7b
 
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
@@ -167,6 +164,11 @@ set visualbell noerrorbells
 set t_vb=
 set belloff=all
 
+hi CocErrorHighlight   ctermbg=NONE guibg=NONE cterm=undercurl gui=undercurl guisp=#ff0000
+hi CocWarningHighlight ctermbg=NONE guibg=NONE cterm=undercurl gui=undercurl guisp=#ffb000
+hi CocInfoHighlight    ctermbg=NONE guibg=NONE cterm=undercurl gui=undercurl guisp=#00aaff
+hi CocHintHighlight    ctermbg=NONE guibg=NONE cterm=undercurl gui=undercurl guisp=#00ffff
+hi CocUnusedHighlight  ctermbg=NONE guibg=NONE cterm=italic gui=italic guifg=#808080
 if has('gui_running')
   autocmd GUIEnter * set t_vb=
 endif
@@ -212,40 +214,14 @@ highlight VimSuggestMatchSel ctermfg=White guifg=#FFFFFF guibg=#2A5D8A cterm=bol
 highlight VimSuggestMute ctermfg=Gray guifg=#7D848A guibg=#E0E0E0
 let s:term_buf = 0
 
-function! ToggleTerminal()
-  if bufexists(s:term_buf)
-    let l:job = term_getjob(s:term_buf)
-    let l:is_alive = l:job != v:null && job_status(l:job) ==# 'run'
-  else
-    let l:is_alive = 0
-  endif
-
-  if !l:is_alive
-    if bufexists(s:term_buf)
-      execute 'bwipeout! ' . s:term_buf
-    endif
-    botright 15new
-    let s:term_buf = bufnr('%')
-    call term_start(&shell, {'curwin': 1})
-    startinsert
-  " 2. If split is currently visible, hide it
-  elseif bufwinnr(s:term_buf) != -1
-    execute bufwinnr(s:term_buf) . 'wincmd c'
-  " 3. If split is hidden, reopen it
-  else
-    execute 'botright 15split +buffer' . s:term_buf
-    startinsert
-  endif
-endfunction
-nno <silent> <Leader>t :call ToggleTerminal()<CR>
 tnoremap <Leader>p <C-w>"+
-tnoremap <silent> <Leader>t <C-\><C-n>:call ToggleTerminal()<CR>
 tnoremap <Esc> <C-\><C-n>
 
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
 let g:fern#default_hidden = 1
 nno <silent> - :Fern . -drawer -toggle -reveal=%<CR>
+
 augroup FernCustom
   autocmd!
   " Close drawer automatically when opening a file
