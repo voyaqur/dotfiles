@@ -15,7 +15,7 @@ endif
 set ai si hls ic scs is cb+=unnamedplus cot=menu,menuone,noselect ts=4 sw=4 sts=4 noet cul nu
 set completeopt=menuone,noinsert,noselect
 set clipboard=unnamed,unnamedplus
-set shortmess+=c
+set shortmess+=cFsIa
 
 colorscheme default
 let mapleader = " "

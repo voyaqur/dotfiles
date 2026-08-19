@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "coc-json": ">=1.9.6",
+    "coc-tsserver": ">=2.4.1",
+    "coc-pyright": ">=1.1.412",
+    "coc-clangd": ">=0.33.0",
+    "coc-snippets": ">=3.4.9"
+  },
+  "lastUpdate": 1786940096742
+}
