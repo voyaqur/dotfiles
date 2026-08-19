@@ -62,7 +62,7 @@ if has("gui_running")
     set guioptions-=L  " Remove left scrollbar
     set guioptions+=k  " Prevent window resize
     if has("gui_gtk2") || has("gui_gtk3")
-        set gfn=JetBrains\ Mono\ NL\ 11,monospace\ 11
+        set gfn=Iosevka\ Fixed\ Extended\ 11,monospace\ 11
     elseif has("gui_win32")
         set gfn=Consolas:h11
     endif
