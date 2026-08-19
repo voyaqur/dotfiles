@@ -6,8 +6,7 @@
     "margin-top": 0,
     "margin-left": 0,
     "margin-right": 0,
-
-    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+    "modules-left": ["sway/workspaces","sway/window"],
     "modules-center": [""],
     "modules-right": [
 				"group/wireless",
@@ -18,23 +17,16 @@
         "tray"
     ],
 
-    "hyprland/workspaces": {
-        "format": "{id}",
+    "sway/workspaces": {
+        "format": "{name}",
         "on-click": "activate"
     },
 
-    "hyprland/window": {
+    "sway/window": {
         "format": "󰍹 {}",
         "max-length": 28,
         "separate-outputs": true
     },
-
-    "hyprland/submap": {
-        "format": "󰋽 {}",
-        "max-length": 16,
-        "tooltip": false
-    },
-
     "clock": {
         "format": " {:%a, %d. %b %I:%M %p}"
     },

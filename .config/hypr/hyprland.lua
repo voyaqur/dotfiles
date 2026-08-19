@@ -41,7 +41,10 @@ local programs = {
     menu = "vicinae toggle",
     notification = "dunst",
     -- shell = "quickshell",
-    browser = "firefox"
+    browser = "helium-browser"
+    -- browser = "zen-browser"
+    -- browser = "librewolf"
+    -- browser = "firefox"
 }
 
 -------------------

@@ -42,9 +42,10 @@ function config.setup()
 
         -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
         dwindle = {
-            smart_split = false,
-            smart_resizing = false,
-            preserve_split = false
+            smart_split = true,
+            smart_resizing = true,
+            precise_mouse_move = true,
+            preserve_split = true
         },
         -- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
         scrolling = {

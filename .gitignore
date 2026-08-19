@@ -3,5 +3,7 @@
 .config/qutebrowser/__pycache__/
 .config/yazi/plugins/
 .config/yazi/flavors/
+.config/.zcompdump
+.config/.zcompcache
 
 
