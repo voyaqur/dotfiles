@@ -39,6 +39,7 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 # apt-get, dpkg (Debian), rpm (Redhat), urpmi (Mandrake), perl's -M option,
 # bogofilter (zsh 4.2.1 or later), fink, mac_apps (MacOS X)(zsh 4.2.2 or later)
 zstyle ':completion:*' use-cache true
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
 # Select completion candidates with ←↓↑→ (completion candidates are displayed in different colors)
 # zstyle show completion menu if 1 or more items to select
 zstyle ':completion:*:default' menu select=1
@@ -61,6 +62,50 @@ zstyle ':completion:*' file-sort 'modification'
 zstyle ':completion:*:make:*:targets' call-command true
 zstyle ':completion:*:make::' tag-order targets:
 zstyle ':completion:*:*:*make:*:targets' command awk \''/^[a-zA-Z0-9][^\/\t=]+:/ {print $1}'\' \$file
-#zstyle ':completion:*:*:make:*:targets' ignored-patterns '*.o'
-#zstyle ':completion:*:*:*make:*:*' tag-order '!targets !functions !file-patterns'
-#zstyle ':completion:*:*:*make:*:*' avoid-completer '_files'
+zstyle ':completion:*:*:make:*:targets' ignored-patterns '*.o'
+zstyle ':completion:*:*:*make:*:*' tag-order '!targets !functions !file-patterns'
+zstyle ':completion:*:*:*make:*:*' avoid-completer '_files'
+
+zstyle ':autocomplete:*' default-context ''
+# '': Start each new command line with normal autocompletion.
+# history-incremental-search-backward: Start in live history search mode.
+
+zstyle ':autocomplete:*' delay 0.4 # number of seconds (float)
+# 0:   Start autocompletion immediately when you stop typing.
+# 0.4: Wait 0.4 seconds for more keyboard input before showing completions.
+
+zstyle ':autocomplete:*' min-input 3 # number of characters (integer)
+# 0: Show completions immediately on each new command line.
+# 1: Wait for at least 1 character of input.
+
+zstyle ':autocomplete:*' ignored-input '' # (extended) glob pattern
+# '':     Always show completions.
+# '..##': Don't show completions when the input consists of two or more dots.
+
+# When completions don't fit on screen, show up to this many lines:
+#zstyle ':autocomplete:*' list-lines 16  # (integer)
+# NOTE: The actual amount shown can be less.
+zstyle -e ':autocomplete:*' list-lines 'reply=( $(( LINES / 3 )) )'
+
+zstyle ':autocomplete:history-search:*' list-lines 16 # int
+# Show this many history lines when pressing ↑.
+
+zstyle ':autocomplete:history-incremental-search-*:*' list-lines 16 # int
+# Show this many history lines when pressing ⌃R or ⌃S.
+
+zstyle ':autocomplete:*' insert-unambiguous no
+# no:  (Shift-)Tab inserts top (bottom) completion.
+# yes: Tab first inserts substring common to all listed completions (if any).
+
+zstyle ':autocomplete:*' add-space \
+    executables aliases functions builtins reserved-words commands
+
+# Order in which completions are listed on screen, if shown at the same time:
+zstyle ':completion:*:' tag-order '! history-words' -
+zstyle ':completion:*:' group-order \
+    expansions options \
+    executables local-directories directories suffix-aliases \
+    aliases functions builtins reserved-words commands
+
+zstyle ':completion:*:complete:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+zstyle ':completion:list-expand:*' completer _expand _complete _ignored

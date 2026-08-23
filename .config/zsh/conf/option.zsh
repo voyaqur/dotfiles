@@ -49,9 +49,9 @@ setopt auto_menu         # Automatic completion of completion candidates in orde
 setopt auto_param_keys   # Automatically completes bracket correspondence, etc.
 setopt auto_resume       # Resume when executing the same command name as a suspended process
 
-#setopt auto_correct          # Spell check when completing
-#setopt correct               # Complete misspellings
-#setopt correct_all           # Spell check all command lines
+# setopt auto_correct # Spell check when completing
+setopt correct     # Complete misspellings
+setopt correct_all # Spell check all command lines
 
 #setopt auto_cd               # Move by directory only
 setopt no_beep # Don't beep on command input error
@@ -100,9 +100,10 @@ unsetopt no_clobber
 #setopt no_unset              # Don't use undefined variables
 setopt interactive_comments # Allow comments while typing commands
 setopt chase_links          # Symbolic links are converted to linked paths before execution
-#setopt print_exit_value      # Print exit code if return value is non-zero
+# setopt print_exit_value     # Print exit code if return value is non-zero
 #setopt single_line_zle       # One-line edit mode instead of default multi-line command line editing
 #setopt xtrace                # Show how command line was expanded and executed
 setopt noflowcontrol
-
 setopt nolistambiguous # Show menu
+setopt CORRECT
+setopt CORRECT_ALL

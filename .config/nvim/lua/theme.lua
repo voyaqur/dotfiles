@@ -11,7 +11,7 @@ require("solarized-osaka").setup {
     transparent = true,
     terminal_colors = true,
     styles = {
-        comments = { italic = true },
+        comments = { italic = false },
         keywords = { italic = true },
         functions = {},
         variables = {},

@@ -5,16 +5,17 @@ return {
         cpp = { fallback = "lsp" },
         sh = { 'shfmt' },
         bash = { 'shfmt' },
-        -- javascript = { "eslint_d", "prettierd" },
-        -- typescript = { "eslint_d", "prettierd" },
-        -- javascriptreact = { "eslint_d", "prettierd" },
-        -- typescriptreact = { "eslint_d", "prettierd" },
-        -- svelte = { "prettierd" },
-        -- css = { "prettierd" },
-        -- html = { "prettierd" },
-        -- json = { "jq" },
-        -- markdown = { "prettierd", "injected" }, -- Formats code blocks inside markdown
+        zsh = { "shfmt" },
     },
+    -- javascript = { "eslint_d", "prettierd" },
+    -- typescript = { "eslint_d", "prettierd" },
+    -- javascriptreact = { "eslint_d", "prettierd" },
+    -- typescriptreact = { "eslint_d", "prettierd" },
+    -- svelte = { "prettierd" },
+    -- css = { "prettierd" },
+    -- html = { "prettierd" },
+    -- json = { "jq" },
+    -- markdown = { "prettierd", "injected" }, -- Formats code blocks inside markdown
     format_after_save = {
         lsp_format = "fallback",
     },
@@ -26,7 +27,7 @@ return {
     end,
     formatters = {
         shfmt = {
-            prepend_args = { "-i", "2" },
+            prepend_args = { "-i", "2", "-ci", "-sr" },
         },
     },
 }

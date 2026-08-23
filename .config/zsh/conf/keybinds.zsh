@@ -1,5 +1,5 @@
 bindkey -e #emacs
-#bindkey -v     # vi 
+#bindkey -v     # vi
 # _fix_cursor() {
 #    echo -ne '\e[5q'
 # }
@@ -17,4 +17,12 @@ autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
+# bindkey $key[Control - Space] list-expand
+# list-expand:      Reveal hidden completions.
+# set-mark-command: Activate text selection.
 
+#bindkey -M menuselect $key[Return] .accept-line
+# .accept-line: Accept command line.
+# accept-line:  Accept selection and exit menu.
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete

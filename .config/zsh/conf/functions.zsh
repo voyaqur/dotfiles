@@ -4,16 +4,15 @@
 
 ###     cd      ###
 function ls_abbrev() {
-	local ls_result
-	ls_result=$(CLICOLOR_FORCE=1 COLUMNS=$COLUMNS command \
-		\ls -1 -CF --show-control-char --color=always | sed $'/^\e\[[0-9;]*m$/d')
-
-	if [ $(echo "$ls_result" | wc -l | tr -d ' ') -gt 50 ]; then
-		echo "$ls_result" | head -n 10
-		echo '......'
-		echo "$ls_result" | tail -n 10
-		echo "${fg_bold[yellow]}$(command ls -1 -A | wc -l | tr -d ' ') files exist${reset_color}" # shuck: ignore=C006 # set by zsh's colors autoload
-	else
+    local ls_result
+    ls_result=$(CLICOLOR_FORCE=1 COLUMNS=$COLUMNS command \
+        \ls -1 -CF --show-control-char --color=always | sed $'/^\e\[[0-9;]*m$/d')
+    if [ $(echo "$ls_result" | wc -l | tr -d ' ') -gt 50 ]; then
+        echo "$ls_result" | head -n 10
+        echo '......'
+        echo "$ls_result" | tail -n 10
+        echo "${fg_bold[yellow]}$(command ls -1 -A | wc -l | tr -d ' ') files exist${reset_color}" # shuck: ignore=C006 # set by zsh's colors autoload
+    else
 		echo "$ls_result"
 	fi
 }
@@ -158,7 +157,7 @@ function print_debug() {
 }
 
 ###     delta      ###
-autoload -U delta
+# autoload -U delta
 
 ### search command ###
 function search_commands() {
@@ -207,8 +206,8 @@ function precmd_prompt() {
 	__terminal_set_title "zsh:${dir}"
 }
 
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd precmd_prompt
+# autoload -Uz add-zsh-hook
+# add-zsh-hook precmd precmd_prompt
 
 function chpwd() {
 	ls_abbrev
@@ -620,82 +619,24 @@ EOF
 	ls -la
 }
 
-function arch-package-count() {
-	echo -n "All Packages: "
-	pacman -Q | wc -l
-	echo -n "  Packages: "
-	pacman -Qe | wc -l
-	echo -n "    Official Packages: "
-	pacman -Qen | wc -l
-	echo -n "    AUR Packages: "
-	pacman -Qem | wc -l
-	echo -n "  Dependent Packages: "
-	pacman -Qd | wc -l
-	echo -n "    Official Dependent Packages: "
-	pacman -Qdn | wc -l
-	echo -n "    AUR Dependent Packages: "
-	pacman -Qdm | wc -l
-}
+# function arch-package-count() {
+# 	echo -n "All Packages: "
+# 	pacman -Q | wc -l
+# 	echo -n "  Packages: "
+# 	pacman -Qe | wc -l
+# 	echo -n "    Official Packages: "
+# 	pacman -Qen | wc -l
+# 	echo -n "    AUR Packages: "
+# 	pacman -Qem | wc -l
+# 	echo -n "  Dependent Packages: "
+# 	pacman -Qd | wc -l
+# 	echo -n "    Official Dependent Packages: "
+# 	pacman -Qdn | wc -l
+# 	echo -n "    AUR Dependent Packages: "
+# 	pacman -Qdm | wc -l
+# }
 
-#==============================================================#
-##         App Utils                                          ##
-#==============================================================#
 
-function xauth-paste() {
-	local input
-	if [[ "$#" -eq 1 ]]; then
-		input=$1
-	elif [[ "$#" -eq 0 ]]; then
-		input=$(pbpaste)
-	else
-		return 1
-	fi
-	if [[ -z "$input" ]]; then
-		echo "Empty input"
-		return 1
-	fi
-	if [[ -z "$DISPLAY" ]]; then
-		echo "DISPLAY variable does not found"
-		return 1
-	fi
-	xauth add ${DISPLAY} . ${input}
-	xauth list
-}
-
-function rename_wezterm_title() {
-	echo "\x1b]1337;SetUserVar=panetitle=$(echo -n $1 | base64)\x07"
-}
-
-function change_background() {
-	local color=${1:-0000ff}
-	# Set default background to bright blue
-	printf "\x1b]11;#${color}\x1b\\"
-}
-
-function wezterm() {
-	if [ "$#" == 0 ]; then
-		command wezterm
-		return
-	fi
-	if [ "$1" == "ssh" ]; then
-		# if [ "$2" =~ ".*example.com" ]; then
-		command wezterm $@ -- sh -c 'printf "\033]1337;SetUserVar=%s=%s\007" production `echo -n 1 | base64`; eval $SHELL'
-		return
-		# fi
-	fi
-	command wezterm $@
-}
-
-function twitter-mp4() {
-	if [[ "$#" -ne 2 ]]; then
-		echo "Usage: twitter-mp4 <input.mp4> <output.mp4>"
-		return
-	fi
-	# convert mp4 for twitter
-	ffmpeg -i $1 -vcodec libx264 -pix_fmt yuv420p -strict experimental -r 30 -t 2:20 \
-		-vf "scale=w=1280:h=720:force_original_aspect_ratio=1,pad=1280:720:(ow-iw)/2:(oh-ih)/2" \
-		-vb 1024k -acodec aac -ar 44100 -ac 2 -minrate 1024k -maxrate 1024k -bufsize 1024k -movflags +faststart $2
-}
 
 #==============================================================#
 ##         For ShellScript                                    ##
