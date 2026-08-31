@@ -1,21 +1,13 @@
 return {
     formatters_by_ft = {
         rust = { "rustfmt", fallback = "lsp" }, -- Tells conform to cleanly fallback to rust-analyzer
-        c = { fallback = "lsp" },               -- Lean on clangd natively
+        c = { fallback = "lsp" }, -- Lean on clangd natively
         cpp = { fallback = "lsp" },
-        sh = { 'shfmt' },
-        bash = { 'shfmt' },
+        sh = { "shfmt" },
+        bash = { "shfmt" },
         zsh = { "shfmt" },
+        lua = { "stylua", fallback = "lsp" },
     },
-    -- javascript = { "eslint_d", "prettierd" },
-    -- typescript = { "eslint_d", "prettierd" },
-    -- javascriptreact = { "eslint_d", "prettierd" },
-    -- typescriptreact = { "eslint_d", "prettierd" },
-    -- svelte = { "prettierd" },
-    -- css = { "prettierd" },
-    -- html = { "prettierd" },
-    -- json = { "jq" },
-    -- markdown = { "prettierd", "injected" }, -- Formats code blocks inside markdown
     format_after_save = {
         lsp_format = "fallback",
     },

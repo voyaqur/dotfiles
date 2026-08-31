@@ -5,10 +5,10 @@ vim.g.rustaceanvim = function()
         tools = {
             float_wins = { border = "none" }, -- rounded reads better than none for hover/actions
             hover_actions = {
-                auto_focus = true,            -- jump straight into hover popup, feels more IDE-like
+                auto_focus = true, -- jump straight into hover popup, feels more IDE-like
             },
             code_actions = {
-                ui_select_fallback = true
+                ui_select_fallback = true,
             },
             enable_clippy = true,
             enable_nextest = true,
@@ -119,12 +119,12 @@ vim.g.rustaceanvim = function()
                     interpret = { tests = true },
                     --
                     assist = {
-                        emitMustUse = true,               -- adds #[must_use] when generating functions that return values
-                        expressionFillDefault = "todo",   -- fills missing match arms with `todo!()` instead of `()`
+                        emitMustUse = true, -- adds #[must_use] when generating functions that return values
+                        expressionFillDefault = "todo", -- fills missing match arms with `todo!()` instead of `()`
                     },
                     showUnlinkedFileNotification = false, -- silences the "file not part of any crate" popup for scratch files
                     notifications = {
-                        cargoTomlNotFound = true,         -- silences noise for non-cargo scratch files/subprojects
+                        cargoTomlNotFound = true, -- silences noise for non-cargo scratch files/subprojects
                     },
                     --
                     -- 	-- Type/trait hints even more aggressive
@@ -137,7 +137,7 @@ vim.g.rustaceanvim = function()
                     lru = {
                         capacity = 512, -- bumps the query result cache; noticeably smoother on large workspaces at the cost of RAM
                     },
-                    numThreads = 8,     -- tune to your core count; parallelizes indexing/checking
+                    numThreads = 8, -- tune to your core count; parallelizes indexing/checking
                     --
                     inlayHints = {
                         bindingModeHints = { enable = true },
@@ -148,16 +148,16 @@ vim.g.rustaceanvim = function()
                         parameterHints = { enable = true },
                         typeHints = { enable = true },
                         expressionAdjustmentHints = { enable = "reborrow" }, -- shows implicit &/&mut/deref, genuinely IDE-tier
-                        discriminantHints = { enable = "fieldless" },        -- shows enum discriminant values inline
-                        closureCaptureHints = { enable = true },             -- shows what a closure captures and how (move/&/&mut) — big one for RustRover parity
-                        closureStyle = "rust_analyzer",                      -- readable closure type hints instead of raw impl Fn(...) soup
-                        implicitDrops = { enable = true },                   -- marks implicit drop points at end of scope
+                        discriminantHints = { enable = "fieldless" }, -- shows enum discriminant values inline
+                        closureCaptureHints = { enable = true }, -- shows what a closure captures and how (move/&/&mut) — big one for RustRover parity
+                        closureStyle = "rust_analyzer", -- readable closure type hints instead of raw impl Fn(...) soup
+                        implicitDrops = { enable = true }, -- marks implicit drop points at end of scope
                         genericParameterHints = {
-                            type = { enable = false },                       -- turbofish-style hints for elided generic type args; noisy, opt-in
+                            type = { enable = false }, -- turbofish-style hints for elided generic type args; noisy, opt-in
                             lifetime = { enable = true },
-                            const = { enable = true },                       -- hints for elided const generic args, usually worth it
+                            const = { enable = true }, -- hints for elided const generic args, usually worth it
                         },
-                        maxLength = 25,                                      -- truncates very long inlay hints instead of eating half the line
+                        maxLength = 25, -- truncates very long inlay hints instead of eating half the line
                         renderColons = true,
                     },
                     diagnostics = {
@@ -213,9 +213,9 @@ vim.g.rustaceanvim = function()
                     --
                     -- -- Rename via LSP applies across the whole workspace correctly
                     rename = { allowExternalItems = true },
-                }
+                },
             },
-        }
+        },
     }
 end
 
@@ -226,16 +226,23 @@ vim.pack.add({
     { src = "https://github.com/nvim-neotest/neotest" },
 })
 
-
 local has_neotest, neotest = pcall(require, "neotest")
 if has_neotest then
     neotest.setup({
         adapters = { require("rustaceanvim.neotest") },
     })
-    map("n", "<leader>r1", function() neotest.run.run() end, { desc = "Run Nearest Test" })
-    map("n", "<leader>r2", function() neotest.run.run(vim.fn.expand("%")) end, { desc = "Run File Tests" })
-    map("n", "<leader>r3", function() neotest.output.open({ enter = true }) end, { desc = "Test Output" })
-    map("n", "<leader>r4", function() neotest.summary.toggle() end, { desc = "Test Summary" })
+    map("n", "<leader>r1", function()
+        neotest.run.run()
+    end, { desc = "Run Nearest Test" })
+    map("n", "<leader>r2", function()
+        neotest.run.run(vim.fn.expand("%"))
+    end, { desc = "Run File Tests" })
+    map("n", "<leader>r3", function()
+        neotest.output.open({ enter = true })
+    end, { desc = "Test Output" })
+    map("n", "<leader>r4", function()
+        neotest.summary.toggle()
+    end, { desc = "Test Summary" })
 end
 
 vim.api.nvim_create_autocmd("BufRead", {
@@ -258,16 +265,36 @@ vim.api.nvim_create_autocmd("BufRead", {
         if has_crates then
             crates.show()
             local opts = { buffer = ev.buf, silent = true }
-            vim.keymap.set("n", "<leader>cv", crates.show_versions_popup,
-                vim.tbl_extend("force", opts, { desc = "Crate Versions" }))
-            vim.keymap.set("n", "<leader>cf", crates.show_features_popup,
-                vim.tbl_extend("force", opts, { desc = "Crate Features" }))
-            vim.keymap.set("n", "<leader>cu", crates.update_crate,
-                vim.tbl_extend("force", opts, { desc = "Update Crate" }))
-            vim.keymap.set("n", "<leader>cU", crates.upgrade_crate,
-                vim.tbl_extend("force", opts, { desc = "Upgrade Crate" }))
-            vim.keymap.set("n", "<leader>cU", crates.upgrade_all_crates,
-                vim.tbl_extend("force", opts, { desc = "Upgrade All Crates" }))
+            vim.keymap.set(
+                "n",
+                "<leader>cv",
+                crates.show_versions_popup,
+                vim.tbl_extend("force", opts, { desc = "Crate Versions" })
+            )
+            vim.keymap.set(
+                "n",
+                "<leader>cf",
+                crates.show_features_popup,
+                vim.tbl_extend("force", opts, { desc = "Crate Features" })
+            )
+            vim.keymap.set(
+                "n",
+                "<leader>cu",
+                crates.update_crate,
+                vim.tbl_extend("force", opts, { desc = "Update Crate" })
+            )
+            vim.keymap.set(
+                "n",
+                "<leader>cU",
+                crates.upgrade_crate,
+                vim.tbl_extend("force", opts, { desc = "Upgrade Crate" })
+            )
+            vim.keymap.set(
+                "n",
+                "<leader>cU",
+                crates.upgrade_all_crates,
+                vim.tbl_extend("force", opts, { desc = "Upgrade All Crates" })
+            )
         end
     end,
 })
@@ -277,8 +304,8 @@ require("rustowl").setup({
     auto_attach = true,
     idle_time = 2,
     highlight_style = {
-        definitely_live = 'underline',
-        maybe_initialized = 'undercurl',
+        definitely_live = "underline",
+        maybe_initialized = "undercurl",
     },
     colors = {
         -- lifetime = '#50fa7b',
@@ -286,14 +313,14 @@ require("rustowl").setup({
         -- mut_borrow = '#ff79c6',
         -- move = '#f1fa8c',
         -- call = '#ffb86c',
-        outlive = '#ff5555',
+        outlive = "#ff5555",
     },
     client = {
         on_attach = function(_, buffer)
-            vim.keymap.set('n', '<leader>ro', function()
-                require('rustowl').toggle(buffer)
-            end, { buffer = buffer, desc = 'Toggle RustOwl' })
-        end
+            vim.keymap.set("n", "<leader>ro", function()
+                require("rustowl").toggle(buffer)
+            end, { buffer = buffer, desc = "Toggle RustOwl" })
+        end,
     },
 })
 

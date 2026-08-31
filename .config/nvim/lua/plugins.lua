@@ -1,48 +1,42 @@
 local lazy = require("utils")
-local map = vim.keymap.set
+-- local extensions = { "lua", "rust", "c", "cpp", "toml", "json" }
 lazy.load("lualine", nil, nil, require("plugincfgs/lualine"))
 lazy.load("gitsigns", { "BufReadPre", "BufNewFile" }, nil, require("plugincfgs/gitsigns"))
 -- lazy.load("neogen", nil, nil, require("plugincfgs/neogen"))
---
--- lazy.load("dropbar", "FileType", { "lua", "rust", "c", "cpp" }, nil, nil, function()
---     local dropbar_api = require('dropbar.api')
---     vim.keymap.set('n', '<Leader>;', dropbar_api.pick, { desc = 'Pick symbols in winbar' })
---     vim.keymap.set('n', '[;', dropbar_api.goto_context_start, { desc = 'Go to start of current context' })
---     vim.keymap.set('n', '];', dropbar_api.select_next_context, { desc = 'Select next context' })
+vim.api.nvim_set_hl(0, "WinBar", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "WinBarNC", { bg = "NONE" })
+-- lazy.load("dropbar", "FileType", extensions, nil, nil, function()
+--     local dropbar_api = require("dropbar.api")
+--     vim.keymap.set("n", "<Leader>;", dropbar_api.pick, { desc = "Pick symbols in winbar" })
+--     vim.keymap.set("n", "[;", dropbar_api.goto_context_start, { desc = "Go to start of current context" })
+--     vim.keymap.set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
+--     -- vim.api.nvim_set_hl(0, "DropBarMenuFloatBorder", { fg = "NONE", bg = "NONE" })
 -- end)
 
--- lazy.load("ufo", "InsertEnter", "*", require("plugincfgs.ufo"), nil, function()
---     vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
---     vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
---     vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
---     vim.keymap.set('n', 'zm', require('ufo').closeFoldsWith)
--- end)
+lazy.load("ufo", "InsertEnter", "*", require("plugincfgs.ufo"), nil, function()
+    -- vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+    -- vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+    -- vim.keymap.set("n", "zr", require("ufo").openFoldsExceptKinds)
+    -- vim.keymap.set("n", "zm", require("ufo").closeFoldsWith)
+end)
 --
 -- lazy.load("todo-comments", nil, "*", require("plugincfgs/todo_comments"), nil, function()
+--     local map = vim.keymap.set
 --     map("n", "<leader>ft", "<cmd>TodoFzfLua<cr>", { noremap = true, silent = true, desc = "Fzf Search TODOs" })
 --     map("n", "<leader>tq", "<cmd>TodoQuickFix<cr>", { noremap = true, silent = true, desc = "TODOs to QuickFix" })
 --     map("n", "<leader>tt", "<cmd>TodoLocList<cr>", { noremap = true, silent = true, desc = "TODOs to Location List" })
 -- end)
 
--- lazy.load("mason", nil, nil, require("plugincfgs/mason"))
--- vim.api.nvim_create_autocmd({ "FileType" }, {
--- 	pattern = { "toml" },
--- 	group = vim.api.nvim_create_augroup("EmbedToml", {}),
--- 	callback = function()
--- 		require("otter").activate()
--- 	end
--- })
---
 --> no indent, i use nvim autopairs now
 lazy.load("blink.indent", "InsertEnter", "*", require("plugincfgs/blink_indent"))
-lazy.load("blink.pairs", "InsertEnter", "*", {}, function()
+lazy.load("nvim-autopairs", "InsertEnter", "*", { map_cr = true })
+lazy.load("blink.pairs", "InsertEnter", "*", require("plugincfgs/blink_pairs"), function()
     require("blink.pairs").build():pwait(1000000)
 end)
 --
 
 -- lazy.load("fzf-lua", "CmdUndefined", { "Fzf", "FzfLua" }, {})
 lazy.load("tree-sitter-manager", nil, nil, require("plugincfgs/tree-sitter-manager"))
-lazy.load("hardtime", nil, nil, {})
 -- lazy.load("fidget", nil, nil, require("plugincfgs/fidget"))
 lazy.load("which-key", nil, nil, {}, function()
     vim.api.nvim_set_keymap("n", "<Leader><CR>", "<Cmd>WhichKey <Leader><CR>", { noremap = true })
@@ -52,8 +46,8 @@ lazy.load("which-key", nil, nil, {}, function()
     vim.api.nvim_set_keymap("n", "[<CR>", "<Cmd>WhichKey [<CR>", { noremap = true })
     vim.api.nvim_set_keymap("n", "]<CR>", "<Cmd>WhichKey ]<CR>", { noremap = true })
     require("which-key").add({
-        { "<leader>a", group = "Aerial", icon = "󰛂 " },
-        { "<leader>o", group = "Overseer", icon = "󰐍 " },
+        -- { "<leader>a", group = "Aerial", icon = "󰛂 " },
+        -- { "<leader>o", group = "Overseer", icon = "󰐍 " },
         { "<leader>f", group = "FzfLua", icon = "󰍉 " },
     })
 end)
@@ -76,7 +70,6 @@ end)
 --     map("n", "<leader>os", "<cmd>OverseerShell<cr>",
 --         { noremap = true, silent = true, desc = "Run Shell Command as Task" })
 -- end)
-lazy.load("nvim-autopairs", "InsertEnter", "*", { map_cr = true })
 lazy.load("blink.cmp", { "InsertEnter", "CmdLineEnter" }, "*", require("plugincfgs.cmp"), function()
     require("blink.cmp").build():pwait()
 end)

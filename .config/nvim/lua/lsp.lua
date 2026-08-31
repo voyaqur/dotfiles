@@ -12,9 +12,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
             return { buffer = ev.buf, silent = true, desc = desc }
         end
         -- FzfLua Navigation
-        map("n", "<leader>fgd", "<cmd>FzfLua lsp_definitions<CR>", opts("Go to Definition"))
-        map("n", "<leader>fgr", "<cmd>FzfLua lsp_references<CR>", opts("Go to References"))
-        map("n", "<leader>fgI", "<cmd>FzfLua lsp_implementations<CR>", opts("Go to Implementation"))
         map("n", "<leader>fca", "<cmd>FzfLua lsp_code_actions<CR>", opts("Code Actions"))
         map("n", "<leader>fld", "<cmd>FzfLua diagnostics_document<CR>", opts("Document Diagnostics"))
         map("n", "<leader>fw", "<cmd>FzfLua diagnostics_workspace<CR>", opts("Workspace Diagnostics"))

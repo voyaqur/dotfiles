@@ -28,9 +28,9 @@ return {
             draw = {
                 columns = {
                     { "kind_icon" },
-                    { "label",    "label_description", gap = 1 },
+                    { "label", "label_description", gap = 1 },
                     { "kind" },
-                    -- { "source_name", "source_id",         gap = 1 },
+                    -- { "source_name" },
                 },
                 treesitter = { "lsp" },
             },
@@ -51,7 +51,7 @@ return {
                 },
             },
         },
-        ghost_text = { enabled = true, show_with_menu = true },
+        ghost_text = { enabled = false, show_with_menu = true },
     },
     sources = {
         default = function()
@@ -67,6 +67,7 @@ return {
                 module = "blink.cmp.sources.lsp",
                 score_offset = 100,
                 async = true,
+                min_keyword_length = 1,
             },
             snippets = {
                 name = "Snippets",

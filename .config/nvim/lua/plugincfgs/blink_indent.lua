@@ -10,38 +10,39 @@ return {
     },
     mappings = {
         -- which lines around the scope are included for 'ai': 'top', 'bottom', 'both', or 'none'
-        border = 'both',
+        border = "both",
         -- set to '' to disable
         -- textobjects (e.g. `y2ii` to yank current and outer scope)
-        object_scope = 'ii',
-        object_scope_with_border = 'ai',
+        object_scope = "ii",
+        object_scope_with_border = "ai",
         -- motions
-        goto_top = '[i',
-        goto_bottom = ']i',
+        goto_top = "[i",
+        goto_bottom = "]i",
     },
     static = {
         enabled = true,
-        char = '▏',
+        char = "▏",
         whitespace_char = nil, -- inherits from `vim.opt.listchars:get().space` when `nil` (see `:h listchars`)
         priority = 1,
         -- specify multiple highlights here for rainbow-style indent guides
         -- highlights = { 'BlinkIndentRed', 'BlinkIndentOrange', 'BlinkIndentYellow', 'BlinkIndentGreen', 'BlinkIndentViolet', 'BlinkIndentCyan' },
-        highlights = { 'BlinkIndent' },
+        highlights = { "BlinkIndent" },
+        -- highlights={}
     },
     scope = {
-        enabled = true,           -- highlight highest level of indentation on the current line
-        indent_at_cursor = false, -- clamp to indent level of cursor
-        char = '▏',
+        enabled = true, -- highlight highest level of indentation on the current line
+        indent_at_cursor = true, -- clamp to indent level of cursor
+        char = "▏",
         priority = 1000,
         -- set this to a single highlight, such as 'BlinkIndent' to disable rainbow-style indent guides
         -- highlights = { 'BlinkIndentScope' },
         -- optionally add: 'BlinkIndentRed', 'BlinkIndentCyan', 'BlinkIndentYellow', 'BlinkIndentGreen'
-        highlights = { 'BlinkIndentOrange', 'BlinkIndentViolet', 'BlinkIndentBlue' },
+        highlights = { "BlinkIndentOrange" },
         -- enable to show underlines on the line above the current scope
         underline = {
             enabled = false,
             -- optionally add: 'BlinkIndentRedUnderline', 'BlinkIndentCyanUnderline', 'BlinkIndentYellowUnderline', 'BlinkIndentGreenUnderline'
-            highlights = { 'BlinkIndentOrangeUnderline', 'BlinkIndentVioletUnderline', 'BlinkIndentBlueUnderline' },
+            -- highlights = { 'BlinkIndentOrangeUnderline', 'BlinkIndentVioletUnderline', 'BlinkIndentBlueUnderline' },
         },
     },
 }

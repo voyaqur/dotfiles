@@ -27,12 +27,34 @@ opt.fileformats = { "unix", "dos", "mac" }
 
 -- 3. Kill Built-in Legacy Plugin Sourcing (Speed Optimization)
 local disabled_built_ins = {
-    "2html_plugin", "getscript", "getscriptPlugin", "gzip", "logiPat",
-    "man", "matchit", "matchparen", "netrwFileHandlers", "netrwPlugin",
-    "netrwSettings", "remote_plugins", "rplugin", "rrhelper", "shada_plugin",
-    "spec", "spellfile_plugin", "tar", "tarPlugin", "tutor_mode_plugin",
-    "vimball", "vimballPlugin", "zip", "zipPlugin", "black", "fzf",
-    "gtags", "gtags_cscope"
+    "2html_plugin",
+    "getscript",
+    "getscriptPlugin",
+    "gzip",
+    "logiPat",
+    "man",
+    "matchit",
+    "matchparen",
+    "netrwFileHandlers",
+    "netrwPlugin",
+    "netrwSettings",
+    "remote_plugins",
+    "rplugin",
+    "rrhelper",
+    "shada_plugin",
+    "spec",
+    "spellfile_plugin",
+    "tar",
+    "tarPlugin",
+    "tutor_mode_plugin",
+    "vimball",
+    "vimballPlugin",
+    "zip",
+    "zipPlugin",
+    "black",
+    "fzf",
+    "gtags",
+    "gtags_cscope",
 }
 for _, plugin in ipairs(disabled_built_ins) do
     g["loaded_" .. plugin] = 1

@@ -1,5 +1,5 @@
 return {
-	notification = {
-		override_vim_notify = true
-	}
+    notification = {
+        override_vim_notify = true,
+    },
 }

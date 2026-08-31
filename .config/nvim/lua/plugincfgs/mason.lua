@@ -1,6 +1,5 @@
 return {
-	firewall = {
-		enabled = true
-	},
-
+    firewall = {
+        enabled = true,
+    },
 }

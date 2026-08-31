@@ -1,7 +1,6 @@
 background-opacity = 1
 background-blur = false
-theme = Solarized Dark
-background = #031219
+theme = solaka_dark
 window-decoration = false
 resize-overlay = never
 # font-family = JetBrainsMono Nerd Font
@@ -19,4 +18,4 @@ scrollbar = never
 async-backend = epoll
 quit-after-last-window-closed = true
 quit-after-last-window-closed-delay = 5m
-
+app-notifications = no-clipboard-copy

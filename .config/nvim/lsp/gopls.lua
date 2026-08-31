@@ -19,11 +19,11 @@ return {
                 parameterNames = true,
                 rangeVariableTypes = true,
             },
-            gofumpt = true,            -- Use gofumpt instead of gofmt for stricter formatting
-            staticcheck = true,        -- Enable staticcheck linter rules inside gopls
+            gofumpt = true, -- Use gofumpt instead of gofmt for stricter formatting
+            staticcheck = true, -- Enable staticcheck linter rules inside gopls
             completeUnimported = true, -- Auto-complete unimported packages
-            usePlaceholders = true,    -- Show parameter placeholders in auto-completions
-            semanticTokens = true,     -- Enable semantic color highlighting
+            usePlaceholders = true, -- Show parameter placeholders in auto-completions
+            semanticTokens = true, -- Enable semantic color highlighting
         },
     },
 }

@@ -1,8 +1,8 @@
 local diagnostic_severity_info = {
     [vim.diagnostic.severity.ERROR] = { icon = "󰅚", hl = "DiagnosticError" }, -- nf-md-close_circle
-    [vim.diagnostic.severity.WARN]  = { icon = "󰀪", hl = "DiagnosticWarn" }, -- nf-md-alert
-    [vim.diagnostic.severity.INFO]  = { icon = "󰋽", hl = "DiagnosticInfo" }, -- nf-md-information
-    [vim.diagnostic.severity.HINT]  = { icon = "󰌶", hl = "DiagnosticHint" }, -- nf-md-lightbulb
+    [vim.diagnostic.severity.WARN] = { icon = "󰀪", hl = "DiagnosticWarn" }, -- nf-md-alert
+    [vim.diagnostic.severity.INFO] = { icon = "󰋽", hl = "DiagnosticInfo" }, -- nf-md-information
+    [vim.diagnostic.severity.HINT] = { icon = "󰌶", hl = "DiagnosticHint" }, -- nf-md-lightbulb
 }
 local signs_text = {}
 for severity, info in pairs(diagnostic_severity_info) do
@@ -13,7 +13,6 @@ vim.diagnostic.config({
     signs = {
         text = signs_text,
     },
-
     virtual_text = false,
     severity_sort = true,
     underline = true,
@@ -21,7 +20,7 @@ vim.diagnostic.config({
     -- virtual_lines = { current_line = false },
     float = {
         focusable = false,
-        border = "none",    -- "single", "double", "rounded", "solid", "shadow"
+        border = "none", -- "single", "double", "rounded", "solid", "shadow"
         source = "if_many", -- "always", "if_many", or boolean
         header = { "Diagnostics:", "DiagnosticHeader" },
 
@@ -45,7 +44,7 @@ local diagnostics_active = true
 vim.keymap.set("n", "<leader>e", function()
     diagnostics_active = not diagnostics_active
     vim.diagnostic.config({
-        virtual_text = diagnostics_active
+        virtual_text = diagnostics_active,
     })
 end, { desc = "Toggle Diagnostics" })
 local HL = {

@@ -34,12 +34,12 @@ opt.shadafile = vim.fn.stdpath("state") .. "/shada/main.shada"
 -- Persistent Undo State
 opt.undofile = true
 opt.undodir = vim.fn.stdpath("state") .. "/undo/"
-vim.fn.mkdir(opt.undodir:get()[1], "p")
+-- vim.fn.mkdir(opt.undodir:get()[1], "p")
 
 -- Backup Engine Setup
 opt.backup = true
 opt.backupdir = vim.fn.stdpath("state") .. "/backup/"
-vim.fn.mkdir(opt.backupdir:get()[1], "p")
+-- vim.fn.mkdir(opt.backupdir:get()[1], "p")
 opt.backupskip = ""
 opt.writebackup = false
 
@@ -96,8 +96,8 @@ opt.equalalways = false
 -- Clean Custom UI Borders & Character Masks
 opt.list = true
 opt.listchars = {
-    tab = "» ",
-    space = "·"
+    -- tab = "» ",
+    -- space = "·"
 }
 opt.fillchars = {
     horiz = "━",
@@ -117,7 +117,7 @@ opt.fillchars = {
 }
 
 -- Native Advanced Dynamic Status Column Setup
-opt.statuscolumn = "%=%{&nu ? v:relnum && mode() != 'i' ? v:relnum : v:lnum : ''} %s%C"
+opt.statuscolumn = "%s%=%{&nu ? v:relnum && mode() != 'i' ? v:relnum : v:lnum : ''}%C "
 
 -- Navigation & Scrolling Fields
 opt.smoothscroll = true
@@ -145,7 +145,7 @@ opt.shiftround = true
 opt.foldmethod = "expr" -- Prioritized manual over indent based on newest paste
 opt.foldlevel = 1
 opt.foldenable = true
-opt.foldcolumn = '1'
+opt.foldcolumn = "1"
 -- opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldlevelstart = 99
 opt.foldlevel = 99

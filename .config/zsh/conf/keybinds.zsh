@@ -24,5 +24,5 @@ zle -N down-line-or-beginning-search
 #bindkey -M menuselect $key[Return] .accept-line
 # .accept-line: Accept command line.
 # accept-line:  Accept selection and exit menu.
-bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
-bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+# bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+# bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete

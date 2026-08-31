@@ -8,29 +8,29 @@ local M = {}
 ---@param start function|nil Callback executed immediately before the plugin is required.
 ---@param later function|nil Callback executed immediately after the plugin is setup.
 function M.load(name, ev, pt, cfg, start, later)
-	local function loader()
-		if type(start) == "function" then
-			start()
-		end
-		require(name).setup(cfg or {})
-		if type(later) == "function" then
-			later()
-		end
-	end
-	if not ev then
-		loader()
-		return
-	end
-	local lazy = vim.api.nvim_create_augroup("Lazy_" .. name, { clear = true })
-	vim.api.nvim_create_autocmd(ev, {
-		group = lazy,
-		once = true,
-		pattern = pt or "*",
-		callback = function()
-			loader()
-			vim.api.nvim_del_augroup_by_id(lazy)
-		end,
-	})
+    local function loader()
+        if type(start) == "function" then
+            start()
+        end
+        require(name).setup(cfg or {})
+        if type(later) == "function" then
+            later()
+        end
+    end
+    if not ev then
+        loader()
+        return
+    end
+    local lazy = vim.api.nvim_create_augroup("Lazy_" .. name, { clear = true })
+    vim.api.nvim_create_autocmd(ev, {
+        group = lazy,
+        once = true,
+        pattern = pt or "*",
+        callback = function()
+            loader()
+            vim.api.nvim_del_augroup_by_id(lazy)
+        end,
+    })
 end
 
 return M
