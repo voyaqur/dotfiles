@@ -29,7 +29,7 @@ if empty(glob(s:plug_path))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-set ai si hls ic scs is cb+=unnamedplus cot=menu,menuone,noselect ts=2 sw=2 sts=2 noet cul nu
+set ai si hls ic scs is cb+=unnamed,unnamedplus cot=menu,menuone,noselect ts=2 sw=2 sts=2 noet cul nu
 set completeopt=menuone,noinsert,noselect
 set clipboard=unnamed,unnamedplus
 set shortmess+=cFsIa

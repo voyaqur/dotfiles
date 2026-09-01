@@ -51,14 +51,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
         -- vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
         -- Native Completion
         if client:supports_method("textDocument/completion") then
-            vim.lsp.completion.enable(false, client.id, ev.buf, {
-                -- convert = function(item)
-                -- 	return {
-                -- 		abbr = item.label:gsub("%b()", ""),
-                -- 	}
-                -- end,
-                -- vim.keymap.set("i", "<C-space>", vim.lsp.completion.get, { desc = "trigger autocompletion" })
-            })
+            -- vim.lsp.completion.enable(false, client.id, ev.buf, {
+            --     -- convert = function(item)
+            --     -- 	return {
+            --     -- 		abbr = item.label:gsub("%b()", ""),
+            --     -- 	}
+            --     -- end,
+            --     -- vim.keymap.set("i", "<C-space>", vim.lsp.completion.get, { desc = "trigger autocompletion" })
+            -- })
         end
         -- Formatting: Defines buffer command :Fmt and binds to <leader>fm
         if client:supports_method("textDocument/formatting") then
@@ -74,4 +74,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end
     end,
 })
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+}
 vim.lsp.enable({ "lua-ls", "clangd", "gopls", "bash-lsp" })

@@ -1,6 +1,6 @@
 local handler = function(virtText, lnum, endLnum, width, truncate)
     local newVirtText = {}
-    local suffix = (" 󰁂 %d "):format(endLnum - lnum)
+    local suffix = (" 󰇘 %d "):format(endLnum - lnum)
     local sufWidth = vim.fn.strdisplaywidth(suffix)
     local targetWidth = width - sufWidth
     local curWidth = 0
@@ -22,13 +22,12 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
         end
         curWidth = curWidth + chunkWidth
     end
-    table.insert(newVirtText, { suffix, "MoreMsg" })
+    table.insert(newVirtText, { suffix, "Comment" })
     return newVirtText
 end
+
 return {
-    provider_selector = function()
-        return { "treesitter", "indent" }
-    end,
+    fold_virt_text_handler = handler,
     open_fold_hl_timeout = 150,
     close_fold_kinds_for_ft = {
         default = { "imports", "comment" },
@@ -36,8 +35,7 @@ return {
         c = { "comment", "region" },
     },
     close_fold_current_line_for_ft = {
-        default = true,
-        c = false,
+        default = false,
     },
     preview = {
         win_config = {
@@ -52,5 +50,4 @@ return {
             jumpBot = "]",
         },
     },
-    fold_virt_text_handler = handler,
 }
