@@ -12,10 +12,14 @@ vim.pack.add({
     { src = "https://github.com/stevearc/conform.nvim" },
     { src = "https://github.com/kevinhwang91/promise-async" },
     { src = "https://github.com/kevinhwang91/nvim-ufo" },
-    { src = "https://github.com/kylechui/nvim-surround" },
+    -- { src = "https://github.com/kylechui/nvim-surround" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
     { src = "https://github.com/nvim-tree/nvim-tree.lua" },
+    { src = "https://github.com/nvim-mini/mini.nvim" },
 })
+require("mini.move").setup()
+require("mini.surround").setup()
+-- require("mini.cursorword").setup()
 require("fzf-lua").setup(require("./plugincfgs/fzf"))
 
 -- Honorable mentions (removed):

@@ -7,6 +7,7 @@ HISTFILE="${ZDATADIR}/zsh_history"
 HISTSIZE=10000  # Number of histories in memory
 SAVEHIST=100000 # Number of histories to be saved
 HISTORY_IGNORE="(ls|cd|pwd|zsh|exit|cd ..)"
+ZSH_DISABLE_COMPFIX=true
 LISTMAX=1000 # number of completion listings to ask for (1=shut up, 0=ask when window overflows)
 # KEYTIMEOUT=1 # conflict with zsh-autocomplete
 ZSH_AUTOSUGGEST_USE_ASYNC=1
@@ -26,13 +27,15 @@ WORDCHARS='*?_-[]~&;!#$%^(){}<>|'
 cdpath=("$HOME" .. $HOME/*(N-/) $HOME/.config)
 
 # autoload
-#autoload -Uz run-help
-#autoload -Uz add-zsh-hook
-#autoload -Uz colors && colors
+# autoload -Uz run-help
+# autoload -Uz add-zsh-hook
+autoload -Uz add-zsh-hook colors && colors
 # define in post execution. because compinit is slow and plugin manager automatic load compinit.
-#autoload -Uz compinit && compinit -u
-#autoload -Uz is-at-least
+autoload -Uz compinit && compinit -u
+autoload -Uz is-at-least
+autoload -Uz run-help
 
+# Call compinit ONCE with -C to bypass security checks on cached runs
 # core
 ulimit -c unlimited
 
@@ -43,3 +46,5 @@ export DISABLE_DEVICONS=false
 
 # Report CPU usage for commands running longer than 10 seconds
 #REPORTTIME=10
+#
+#

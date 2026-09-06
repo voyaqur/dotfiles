@@ -1,13 +1,13 @@
-local function os_icon()
-    local sysname = vim.uv and vim.uv.os_uname().sysname or vim.loop.os_uname().sysname
-    if sysname == "Linux" then
-        return ""
-    elseif sysname == "Darwin" then
-        return "" -- macOS
-    elseif sysname == "Windows_NT" then
-        return "" -- Windows
-    end
-end
+-- local function os_icon()
+--     local sysname = vim.uv and vim.uv.os_uname().sysname or vim.loop.os_uname().sysname
+--     if sysname == "Linux" then
+--         return ""
+--     elseif sysname == "Darwin" then
+--         return "" -- macOS
+--     elseif sysname == "Windows_NT" then
+--         return "" -- Windows
+--     end
+-- end
 local function macro_recording()
     local reg = vim.fn.reg_recording()
     if reg ~= "" then
@@ -81,11 +81,11 @@ return {
                 end,
             },
             { "filetype", icon_only = false },
-            { os_icon },
-            {
-                "encoding",
-                show_bomb = false,
-            },
+            -- { os_icon },
+            -- {
+            --     "encoding",
+            --     show_bomb = false,
+            -- },
         },
         lualine_y = {
             { "progress", gui = "bold" },

@@ -1,9 +1,10 @@
 set -g default-terminal "tmux-256color"
+
 set -as terminal-overrides ",*:RGB"
 set -as terminal-overrides ",xterm*:Tc"
+set -as terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[1 q'
 # set -g allow-passthrough on
 set -as terminal-overrides ",xterm*:smcup@:rmcup@"
-set -as terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[2 q'
 set -as terminal-overrides ',xterm*:Cc=\E]12;%p1%s\b:Cr=\E]112\b:Cv=\E]12;yellow\b:Cbc'
 
 set -s escape-time 10                  # Fast key escape time (good for Vim/Neovim)

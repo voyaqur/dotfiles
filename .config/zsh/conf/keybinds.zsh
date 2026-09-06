@@ -9,10 +9,10 @@ zstyle :insert-last-word match '*([[:alpha:]/\\]?|?[[:alpha:]/\\])*'
 
 function cd-up { zle push-line && LBUFFER='builtin cd ..' && zle accept-line; }
 zle -N cd-up
-autoload -U edit-command-line
 zle -N edit-command-line
 zle -N show_buffer_stack
 
+autoload -U edit-command-line
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search

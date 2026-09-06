@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map("n", "go", vim.lsp.buf.type_definition, opts("Go to type definition"))
         map("n", "gr", vim.lsp.buf.references, opts("List all references"))
         map("n", "K", vim.lsp.buf.hover, opts("Show documentation hover"))
-        map("n", "<A-k>", vim.lsp.buf.signature_help, opts("Show signature help"))
+        map("n", "<leader>k", vim.lsp.buf.signature_help, opts("Show signature help"))
         map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Execute code action"))
         map("n", "<leader>rn", vim.lsp.buf.rename, opts("Structural variable renaming"))
 
@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         -- Inlay Hints
         if client:supports_method("textDocument/inlayHint") then
             vim.lsp.inlay_hint.enable(false, { bufnr = ev.buf })
-            map("n", "<leader>th", function()
+            map("n", "<leader>tih", function()
                 local is_enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = ev.buf })
                 vim.lsp.inlay_hint.enable(not is_enabled, { bufnr = ev.buf })
                 vim.notify("Inlay Hints " .. (is_enabled and "Disabled" or "Enabled"))

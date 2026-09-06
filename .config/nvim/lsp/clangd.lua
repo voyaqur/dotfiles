@@ -1,4 +1,10 @@
 return {
+    root_markers = {
+        ".clangd",
+        "compile_commands.json",
+        ".git",
+    },
+    filetypes = { "cpp", "c", "h", "hpp" },
     cmd = {
         "clangd",
         "--background-index=false", -- skip building a persistent index — irrelevant for single .cpp solves, saves startup time
@@ -12,12 +18,7 @@ return {
         "--limit-results=200", -- cap completion list size so large symbol sets (bits/stdc++.h) don't lag the popup
         "--rename-file-limit=0", -- competitive code is single-file; don't waste time scanning project-wide for renames
         "-j=4",
-    },
-    filetypes = { "cpp", "c" },
-    root_markers = {
-        ".clangd",
-        "compile_commands.json",
-        ".git",
+        "--query-driver=/usr/bin/g++,/usr/bin/gcc", -- Replace with path to your g++
     },
     init_options = {
         usePlaceholders = false,

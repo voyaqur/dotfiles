@@ -1,9 +1,29 @@
 local map = vim.keymap.set
 
 -- buffer stuff
-map("n", "<leader>bn", ":bnext<CR>", { desc = "next buffer" })
-map("n", "<leader>bp", ":bprevious<CR>", { desc = "prev buffer" })
-map("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete Buffer" })
+map("n", "<leader>bl", "<cmd>bnext<CR>", { desc = "next buffer" })
+map("n", "<leader>bh", "<cmd>bprevious<CR>", { desc = "prev buffer" })
+map("n", "<leader>bx", "<cmd>bdelete<CR>", { desc = "Delete Buffer" })
+map("n", "<leader>bf", "<cmd>bfirst<CR>", { desc = "first buffer" })
+map("n", "<leader>bL", "<cmd>blast<CR>", { desc = "last buffer" })
+map("n", "<leader>ba", "<cmd>buffer #<CR>", { desc = "alternate/last used buffer" })
+map("n", "<leader>bo", "<cmd>%bd|e#|bd#<CR>", { desc = "delete all other buffers" })
+map("n", "<leader>bb", "<cmd>enew<CR>", { desc = "new empty buffer" })
+
+map("n", "<leader>tl", "<cmd>tabnext<CR>", { desc = "next tab" })
+map("n", "<leader>th", "<cmd>tabprevious<CR>", { desc = "prev tab" })
+map("n", "<leader>tL", "<cmd>tablast<CR>", { desc = "last tab" })
+map("n", "<leader>tH", "<cmd>tabfirst<CR>", { desc = "first tab" })
+map("n", "<leader>tt", "<cmd>tabnew<CR>", { desc = "create new tab" })
+map("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "close tab" })
+map("n", "<leader>to", "<cmd>tabonly<CR>", { desc = "close other tab" })
+map("n", "<leader>tm", "<cmd>tabmove +1<CR>", { desc = "move tab right" })
+map("n", "<leader>tM", "<cmd>tabmove -1<CR>", { desc = "move tab left" })
+
+for i = 1, 9 do
+    map("n", "<leader>t" .. i, i .. "gt", { desc = "go to tab" .. i })
+end
+
 map("n", "-", ":NvimTreeToggle<CR>", { desc = "Toggle tree" })
 --layout
 --layout
@@ -11,19 +31,12 @@ map("n", "s\\", "<cmd>vsplit<CR>", { desc = "split vertically" })
 map("n", "s-", "<cmd>split<CR>", { desc = "split horizontally" })
 
 map("n", "<Esc>", "<Cmd>nohlsearch<CR><Esc>", { noremap = true, silent = true })
-map("n", "K", function()
-    vim.lsp.buf.hover()
-end, { noremap = true, silent = true, desc = "LSP hover" })
 
 -- better motion
-map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
-map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
-map("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
-map("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
-map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
-map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
-map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
-map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+
+-- Visual Mode (handles multiline selection smoothly)
+-- map("v", "<A-k>", ":m '<-2<cr>gv", { desc = "Move Up", silent = true })
+-- map("v", "<A-j>", ":m '>+1<cr>gv", { desc = "Move Down", silent = true })
 
 map("n", "<leader>ff", "<cmd>FzfLua files<CR>", { desc = "Find Files", silent = true })
 -- map("n", "<leader>fr", "<cmd>FzfLua oldfiles<CR>", { desc = "Recent Files", silent = true })
@@ -61,6 +74,11 @@ map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+
+map("i", "<C-h>", "<Left>", { desc = "Left arrow key", remap = true })
+map("i", "<C-j>", "<Down>", { desc = "Down arrow key", remap = true })
+map("i", "<C-k>", "<Up>", { desc = "Up arrow key", remap = true })
+map("i", "<C-l>", "<Right>", { desc = "Right arrow key", remap = true })
 local directions = { h = "L", j = "D", k = "U", l = "R" }
 
 for key, tmux_dir in pairs(directions) do

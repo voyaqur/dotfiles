@@ -25,7 +25,7 @@ unbind '"'
 unbind %
 unbind r
 bind X kill-window -a
-bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
+bind r source-file ~/.config/tmux/.tmux.conf \; display "Config reloaded!"
 
 bind -n M-1 select-window -t 1
 bind -n M-2 select-window -t 2

@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 if [ "$ZSHRC_PROFILE" != "" ]; then
     zmodload zsh/zprof && zprof > /dev/null
 fi
@@ -13,7 +14,13 @@ source "$ZRCDIR/option.zsh"
 source "$ZRCDIR/prompt.zsh"
 source "$ZRCDIR/alias.zsh"
 source "$ZRCDIR/functions.zsh"
-source "$ZRCDIR/plugins.zsh"
 source "$ZRCDIR/keybinds.zsh"
+source "$ZRCDIR/plugins.zsh"
 
 source-safe "$ZHOMEDIR/.zshrc.local"
+{
+    if [[ -s ~/.zcompdump && (! -s ~/.zcompdump.zwc || ~/.zcompdump -nt ~/.zcompdump.zwc) ]]; then
+        zcompile ~/.zcompdump
+    fi
+} &|
+# zprof
