@@ -6,7 +6,7 @@
     "margin-top": 0,
     "margin-left": 0,
     "margin-right": 0,
-    "modules-left": ["sway/workspaces","sway/window"],
+    "modules-left": ["hyprland/workspaces","hyprland/window"],
     "modules-center": [""],
     "modules-right": [
 				"group/wireless",
@@ -17,12 +17,12 @@
         "tray"
     ],
 
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate"
     },
 
-    "sway/window": {
+    "hyprland/window": {
         "format": "󰍹 {}",
         "max-length": 28,
         "separate-outputs": true

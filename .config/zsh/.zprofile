@@ -2,8 +2,9 @@
 # ~/.zprofile
 #
 if uwsm check may-start; then
+    exec uwsm start default
+    # exec uwsm start sway
     # exec uwsm start hyprland.desktop
-    exec uwsm start sway
 fi
 # ~/.zprofile
 # --- Default Applications ---

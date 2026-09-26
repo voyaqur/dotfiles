@@ -3,8 +3,6 @@
 -- EDIT THIS CONFIG ACCORDING TO THE WIKI INSTRUCTIONS.  --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
--- hl.config({}) -- remove this line to remove the warning
-
 -- This is an example Hyprland Lua config file.
 -- Refer to the wiki for more information.
 -- https://wiki.hypr.land/Configuring/Start/
@@ -16,19 +14,17 @@
 -- Create your files separately and then require them like this:
 -- require("myColors")
 
-
 ------------------
 ---- MONITORS ----
 ------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-    output   = "eDP-1",
-    mode     = "1366x768@60",
+    output = "eDP-1",
+    mode = "1366x768@60",
     position = "auto",
-    scale    = "auto",
+    scale = "auto",
 })
-
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -38,10 +34,10 @@ hl.monitor({
 local programs = {
     terminal = "ghostty",
     fileManager = "yazi",
-    menu = "vicinae toggle",
+    menu = "fuzzel",
     notification = "dunst",
     -- shell = "quickshell",
-    browser = "helium-browser"
+    browser = "helium-browser",
     -- browser = "zen-browser"
     -- browser = "librewolf"
     -- browser = "firefox"
@@ -65,7 +61,6 @@ hl.on("hyprland.start", function()
     -- hl.exec_cmd("nm-applet")
 end)
 
-
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
@@ -75,11 +70,9 @@ end)
 hl.env("XCURSOR_SIZE", "18")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
 hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("LIBVA_DRIVER_NAME", "nvidia")
-hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+-- hl.env("LIBVA_DRIVER_NAME", "nvidia")
+-- hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
-
-
 
 -----------------------
 ----- PERMISSIONS -----
@@ -89,16 +82,15 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 -- Please note permission changes here require a Hyprland restart and are not applied on-the-fly
 -- for security reasons
 
--- hl.config({
---   ecosystem = {
---     enforce_permissions = true,
---   },
--- })
+hl.config({
+    ecosystem = {
+        enforce_permissions = true,
+    },
+})
 
 -- hl.permission("/usr/(bin|local/bin)/grim", "screencopy", "allow")
 -- hl.permission("/usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland", "screencopy", "allow")
 -- hl.permission("/usr/(bin|local/bin)/hyprpm", "plugin", "allow")
-
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -106,21 +98,19 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 
-
-
 hl.config({
     input = {
-        kb_layout    = "us",
-        kb_variant   = "",
-        kb_model     = "",
-        kb_options   = "",
-        kb_rules     = "",
+        kb_layout = "us",
+        kb_variant = "",
+        kb_model = "",
+        kb_options = "",
+        kb_rules = "",
 
         follow_mouse = 1,
 
-        sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
 
-        touchpad     = {
+        touchpad = {
             natural_scroll = false,
         },
     },
@@ -129,13 +119,13 @@ hl.config({
 hl.gesture({
     fingers = 3,
     direction = "horizontal",
-    action = "workspace"
+    action = "workspace",
 })
 
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 hl.device({
-    name        = "epic-mouse-v1",
+    name = "epic-mouse-v1",
     sensitivity = -0.5,
 })
 

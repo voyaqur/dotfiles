@@ -1,0 +1,12 @@
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "ea92cf4"
+hash = "9776f378459072b6c2875eae5addc49d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "4dc7f1b"
+hash = "5bb0bfab901d3601c370eafdd66edd31"
+
+[flavor]
+deps = []

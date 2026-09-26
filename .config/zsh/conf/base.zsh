@@ -31,7 +31,10 @@ cdpath=("$HOME" .. $HOME/*(N-/) $HOME/.config)
 # autoload -Uz add-zsh-hook
 autoload -Uz add-zsh-hook colors && colors
 # define in post execution. because compinit is slow and plugin manager automatic load compinit.
-autoload -Uz compinit && compinit -u
+autoload -Uz compinit
+ZSH_COMPDUMP="${ZSH}/.zcompdump"
+compinit -C -d "$ZSH_COMPDUMP"
+
 autoload -Uz is-at-least
 autoload -Uz run-help
 

@@ -1,19 +1,19 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "61ffe3e9cedb59eac31484248a1de6a0e37f8d21",
+      "rev": "473c928d8b9b5b3f638cd085a01899972cf205c6",
       "src": "https://github.com/Saghen/blink.cmp"
     },
     "blink.indent": {
-      "rev": "8b69b9262891fe81fe728fe6a52fa2a84dd5d5e0",
+      "rev": "2e9c9768affeaf3a48b2dc329eb59763012f79f6",
       "src": "https://github.com/Saghen/blink.indent"
     },
     "blink.lib": {
-      "rev": "c8fdc12c8a2fab6cf786dd7141a283f8079f902b",
+      "rev": "fd9a48ebbe6ec30d5dfcc5b42c243941ccdca1aa",
       "src": "https://github.com/saghen/blink.lib"
     },
     "blink.pairs": {
-      "rev": "dd57684daf1297e854e46c85511e7875efb4de75",
+      "rev": "ef8fc29c8afa0fc1d0eb611a1a76fd87f0951f6e",
       "src": "https://github.com/Saghen/blink.pairs"
     },
     "conform.nvim": {
@@ -25,7 +25,7 @@
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
-      "rev": "5be654f2232c10ddcad19c1607a67b6b4b78fc29",
+      "rev": "e583e226776859490757718a22f43f1aac1a3c14",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "lualine.nvim": {
@@ -33,7 +33,7 @@
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mini.nvim": {
-      "rev": "9d01f392b33fb2ba36fbc87fc0bf4453e63ffb0a",
+      "rev": "ac5dffcc52b8378fbb15efeb0497a83e57a0b01c",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nvim-autopairs": {
@@ -41,7 +41,7 @@
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-tree.lua": {
-      "rev": "b2aadda94b107480c48e548d6db51c6840b7b33c",
+      "rev": "8d814495983e8db87d02d2f1da293f25b2fd1bdc",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-ufo": {
@@ -61,7 +61,7 @@
       "src": "https://github.com/craftzdog/solarized-osaka.nvim"
     },
     "tree-sitter-manager.nvim": {
-      "rev": "023590c8f068788a0513a4409bf37ff7f9d1deff",
+      "rev": "1425eacb78bfee34face0fe06a8384ac3c4d9c8e",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"
     },
     "which-key.nvim": {

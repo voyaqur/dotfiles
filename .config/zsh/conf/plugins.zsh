@@ -2,15 +2,9 @@ fpath=(/usr/share/zsh/site-functions $fpath)
 ZSH_AUTOSUGGEST_USE_ASYNC=1
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 ZSH_AUTOSUGGEST_STRATEGY=(history)
-# if [[ ! -f ~/.cache/starship_init.zsh ]]; then
-#     starship init zsh > ~/.cache/starship_init.zsh
-# fi
-
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# eval "$(starship init zsh)"
-# eval "$(zoxide init zsh)"
-# eval "$(mise activate zsh)"
-# eval "$(mise completion zsh)"
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+# ZSH_HIGHLIGHT_STYLES[comment]='fg=cyan'
 ## Starship cache
 # autoload -Uz predict-on && predict-on
 if [[ ! -f ~/.cache/starship_init.zsh ]]; then
