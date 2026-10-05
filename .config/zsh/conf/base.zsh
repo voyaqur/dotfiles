@@ -10,8 +10,11 @@ HISTORY_IGNORE="(ls|cd|pwd|zsh|exit|cd ..)"
 ZSH_DISABLE_COMPFIX=true
 LISTMAX=1000 # number of completion listings to ask for (1=shut up, 0=ask when window overflows)
 # KEYTIMEOUT=1 # conflict with zsh-autocomplete
-ZSH_AUTOSUGGEST_USE_ASYNC=1
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+typeset -g ZSH_AUTOSUGGEST_USE_ASYNC=1
+typeset -g ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+typeset -g ZSH_AUTOSUGGEST_MINIMUM_PREFIX_LEN=2
+typeset -g ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+typeset -g ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 # Do not add root commands to history
 # if [ "$UID" = 0 ]; then
 #   unset HISTFILE
@@ -29,14 +32,15 @@ cdpath=("$HOME" .. $HOME/*(N-/) $HOME/.config)
 # autoload
 # autoload -Uz run-help
 # autoload -Uz add-zsh-hook
-autoload -Uz add-zsh-hook colors && colors
+# autoload -Uz add-zsh-hook colors && colors
 # define in post execution. because compinit is slow and plugin manager automatic load compinit.
-autoload -Uz compinit
-ZSH_COMPDUMP="${ZSH}/.zcompdump"
-compinit -C -d "$ZSH_COMPDUMP"
 
-autoload -Uz is-at-least
-autoload -Uz run-help
+# Unset the temporary wrapper and process queued calls
+# unset -f compdef
+# for cmd in "$_compdef_queue[@]"; do
+#     eval "compdef $cmd"
+# done
+# unset _compdef_queue
 
 # Call compinit ONCE with -C to bypass security checks on cached runs
 # core

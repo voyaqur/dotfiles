@@ -105,5 +105,5 @@ setopt chase_links          # Symbolic links are converted to linked paths befor
 #setopt xtrace                # Show how command line was expanded and executed
 setopt noflowcontrol
 setopt nolistambiguous # Show menu
-setopt CORRECT
-setopt CORRECT_ALL
+# setopt CORRECT
+# setopt CORRECT_ALL

@@ -10,3 +10,5 @@
 .config/fish/fish_variables
 **/node_modules/
 .zcompdump*
+*.zwc
+*.zwc.old
