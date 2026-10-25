@@ -8,7 +8,7 @@ map("n", "<leader>bf", "<cmd>bfirst<CR>", { desc = "first buffer" })
 map("n", "<leader>bL", "<cmd>blast<CR>", { desc = "last buffer" })
 map("n", "<leader>ba", "<cmd>buffer #<CR>", { desc = "alternate/last used buffer" })
 map("n", "<leader>bo", "<cmd>%bd|e#|bd#<CR>", { desc = "delete all other buffers" })
-map("n", "<leader>bb", "<cmd>enew<CR>", { desc = "new empty buffer" })
+map("n", "<leader>b", "<cmd>enew<CR>", { desc = "new empty buffer" })
 
 map("n", "<leader>tl", "<cmd>tabnext<CR>", { desc = "next tab" })
 map("n", "<leader>th", "<cmd>tabprevious<CR>", { desc = "prev tab" })

@@ -6,6 +6,7 @@ vim.pack.add({
     { src = "https://github.com/windwp/nvim-autopairs" }, -- Fallback for edge cases
     { src = "https://github.com/Saghen/blink.indent" },
     { src = "https://github.com/ibhagwan/fzf-lua" },
+    { src = "https://github.com/chomosuke/typst-preview.nvim" },
     { src = "https://github.com/lewis6991/gitsigns.nvim" },
     { src = "https://github.com/romus204/tree-sitter-manager.nvim" },
     { src = "https://github.com/folke/which-key.nvim" },

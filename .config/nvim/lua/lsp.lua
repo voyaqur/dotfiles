@@ -79,4 +79,4 @@ capabilities.textDocument.foldingRange = {
     dynamicRegistration = false,
     lineFoldingOnly = true,
 }
-vim.lsp.enable({ "lua-ls", "clangd", "gopls", "bash-lsp" })
+vim.lsp.enable({ "lua-ls", "clangd", "gopls", "bash-lsp", "tinymist" })

@@ -1,0 +1,20 @@
+# Enable recoloring by default (dark mode for PDFs)
+set recolor "false"
+
+# Keep original images from turning into weird negatives when recolored
+set recolor-keephue "true"
+
+# Optional: Map a quick keybind to toggle recolor on/off if a specific PDF breaks
+map R recolor
+
+# Styling to blend with your window manager/terminal theme
+set font "monospace 10"
+set default-bg "#1e1e2e"
+set default-fg "#cdd6f4"
+set statusbar-bg "#11111b"
+set statusbar-fg "#cdd6f4"
+set inputbar-bg "#11111b"
+set inputbar-fg "#cdd6f4"
+
+# Adjust page margins/padding so it doesn't hug the window borders
+set padding 20

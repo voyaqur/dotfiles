@@ -7,7 +7,7 @@ vim.pack.add({
 })
 
 require("solarized-osaka").setup({
-    transparent = true,
+    transparent = false,
     terminal_colors = true,
     styles = {
         comments = {},
