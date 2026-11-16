@@ -21,3 +21,7 @@ end
 starship init fish | source
 enable_transience
 # Make sure you initialize and enable transience at the end of the file
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/voya/.local/bin" $PATH

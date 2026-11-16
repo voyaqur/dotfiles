@@ -4,6 +4,7 @@ return {
         c = { fallback = "lsp" }, -- Lean on clangd natively
         cpp = { fallback = "lsp" },
         sh = { "shfmt" },
+        typst = { fallback = "lsp" },
         bash = { "shfmt" },
         zsh = { "shfmt" },
         lua = { "stylua", fallback = "lsp" },

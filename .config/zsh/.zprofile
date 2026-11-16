@@ -1,12 +1,13 @@
 #
 # ~/.zprofile
 #
+
 if uwsm check may-start; then
-    exec uwsm start default
-    # exec uwsm start sway
-    # exec uwsm start hyprland.desktop
+    # exec uwsm start default
+    exec uwsm start hyprland.desktop
+    # exec uwsm start mango
 fi
-# ~/.zprofile
+
 # --- Default Applications ---
 export EDITOR="nvim"
 export VISUAL="nvim"

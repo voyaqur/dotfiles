@@ -1,26 +1,23 @@
 local config = {}
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
-local launch_prefix = "uwsm app -- "
+local pfx = "uwsm app -- "
 local viMotion = true
 local augs = {
     term = " +new-window",
 }
 function config.setup(programs)
-    hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(launch_prefix .. programs.terminal .. augs.term))
+    hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(pfx .. programs.terminal .. augs.term))
     local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
     closeWindowBind:set_enabled(true)
     hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.kill())
     -- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
     hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("uwsm stop"))
     hl.bind(mainMod .. " + SHIFT + CTRL + L", hl.dsp.exec_cmd("pidof hyprlock || uwsm app -- hyprlock"))
-    hl.bind(mainMod .. " + W", hl.dsp.exec_cmd('uwsm app -- grim -g "$(slurp)" - | wl-copy -t image/png'))
-    hl.bind(
-        mainMod .. " + E",
-        hl.dsp.exec_cmd(launch_prefix .. programs.terminal .. augs.term .. " -e " .. programs.fileManager)
-    )
+    hl.bind("PRINT", hl.dsp.exec_cmd(pfx .. 'grim -g "$(slurp)" - | wl-copy -t image/png'))
+    hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(pfx .. programs.terminal .. augs.term .. " -e " .. programs.fileManager))
     hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
     hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(programs.menu))
-    hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(launch_prefix .. programs.browser))
+    hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(pfx .. programs.browser))
     hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
     hl.bind(mainMod .. " + A", hl.dsp.layout("togglesplit"))
     hl.bind(mainMod .. " + Y", function()

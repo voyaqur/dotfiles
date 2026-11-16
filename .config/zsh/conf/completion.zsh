@@ -4,8 +4,6 @@
 
 setopt prompt_subst # Pass escape sequence (environment variable) through prompt
 
-# see http://zsh.sourceforge.net/Doc/Release/Completion-System.html
-
 # :completion:function:completer:command:argument:tag
 
 # Show explanation part with optional completion
